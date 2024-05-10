@@ -27,13 +27,13 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ./SonicEar-Backend
+        run: dotnet publish -c Release -o ./SonicEar-Backend/SonicEar-Backend
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
-          path: ./SonicEar-Backend
+          path: ./SonicEar-Backend/SonicEar-Backend
 
   deploy:
     runs-on: windows-latest
