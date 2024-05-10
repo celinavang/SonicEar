@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - main
+      - developer
   workflow_dispatch:
 
 jobs:
@@ -26,17 +27,18 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp/SonicEar-Backend
+        run: dotnet publish -c Release -o ./SonicEar-Backend
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp/SonicEar-Backend
+          path: ./SonicEar-Backend
 
   deploy:
     runs-on: windows-latest
     needs: build
+    if: github.ref == 'refs/heads/main'
     environment:
       name: "Production"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
