@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonicEar-BackendTests", "SonicEar-BackendTests\SonicEar-BackendTests.csproj", "{7A5B8FE0-23EF-4129-9787-7CF18BB2D5F4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonicEar-Frontend", "SonicEar-Frontend\SonicEar-Frontend.csproj", "{ED04ACF8-E91C-4CF2-96E1-9720A1193577}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F1893CEC-BF13-42D4-91DF-168EB1FCDD11} = {F1893CEC-BF13-42D4-91DF-168EB1FCDD11}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
