@@ -1,43 +1,53 @@
-﻿namespace SonicEar_Backend.Models
+﻿using SonicEar_Backend.Data;
+
+namespace SonicEar_Backend.Models
 {
     public class DevicesRepository
     {
         
         // Vi opretter en liste af devices 
-        private readonly List<Device> _devices;
+        // private readonly List<Device> _devices;
+
+        private readonly ApplicationDbContext _context;
 
         // Constructor
-        public DevicesRepository()
+        public DevicesRepository(ApplicationDbContext context)
         {
-            _devices = new List<Device>();
+            // _devices = new List<Device>();
+            _context = context;
         }
 
         // Create metode
         public Device Create(Device device)
         {
-            _devices.Add(device);
+            device.Verify();
+            _context.Devices.Add(device);
+            _context.SaveChanges();
             return device;
         }
 
         // GetAll metode, der returnerer listen af devices
         public List<Device> GetAll()
         {
-            return new List<Device>(_devices);
+            return new List<Device>(_context.Devices);
         }
 
         // GetById metode, der returnerer et device ud fra et id
         public Device? GetById(int id)
         {
-            return _devices.FirstOrDefault(d => d.Id == id);
+            return _context.Devices.FirstOrDefault(d => d.Id == id);
         }
 
         // Update metode, der opdaterer et device ud fra et id
         public Device? Update(Device device, int id)
         {
-            Device? deviceToUpdate = _devices.FirstOrDefault(d => d.Id == id);
+            device.Verify();
+            Device? deviceToUpdate = _context.Devices.FirstOrDefault(d => d.Id == id);
             if (deviceToUpdate != null)
             {
                 deviceToUpdate.Location = device.Location;
+                _context.Devices.Update(deviceToUpdate);
+                _context.SaveChanges();
             }
             return deviceToUpdate;
         }
@@ -45,10 +55,11 @@
         // Delete metode, der sletter et device ud fra et id
         public Device Delete(int id)
         { 
-            Device? device = _devices.Find(d => d.Id == id);
+            Device? device = _context.Devices.FirstOrDefault(d => d.Id == id);
             if (device != null)
             {
-                _devices.Remove(device);
+                _context.Devices.Remove(device);
+                _context.SaveChanges();
             }
             return device;
         }

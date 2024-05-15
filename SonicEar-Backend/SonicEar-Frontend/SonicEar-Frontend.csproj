@@ -31,4 +31,8 @@
     <ProjectReference Include="..\SonicEar-Backend\SonicEar-Backend.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>

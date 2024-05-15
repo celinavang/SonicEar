@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SonicEar_Backend.Classes;
 using SonicEar_Backend.Models;
 
-namespace SonicEar_Frontend.Data
+namespace SonicEar_Backend.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
