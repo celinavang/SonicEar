@@ -8,8 +8,10 @@ namespace SonicEar_Backend.Models
     {
         [PersonalData]
         [DisplayName("Fornavn")]
-        [Required(ErrorMessage = "Fornavn skal udfyldes.")]
-        public string FName { get; set; }
-        public string LName { get; set; }
+        public string? FName { get; set; }
+
+        [PersonalData]
+        [DisplayName("Efternavn")]
+        public string? LName { get; set; }
     }
 }

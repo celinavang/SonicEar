@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using SonicEar_Backend.Models;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SonicEar_Backend.Classes
 {
@@ -6,18 +9,25 @@ namespace SonicEar_Backend.Classes
     {
         [Key]
         public int Id { get; set; }
+
+        [DisplayName("Enheds ID")]
         public int DeviceId { get; set; }
-        // Not implemented foreign key device 08/05-24
+
+        [ForeignKey(nameof(DeviceId))]
+        [DisplayName("Enhed")]
+        public Device Device { get; set; }
+
+        [DisplayName("Tidspunkt")]
         public DateTime TimeStamp { get; set; }
+
+        [DisplayName("Måling")]
         public float NoiseLevel { get; set; }
-
-
 
         public void VerifyDeviceId()
         {
-            if (DeviceId == 0 || DeviceId == null) 
+            if (DeviceId == 0) 
             {
-                throw new ArgumentNullException("Device Id cannot be 0 or null");
+                throw new ArgumentNullException("Device Id cannot be 0");
             }
         }
 
@@ -28,8 +38,6 @@ namespace SonicEar_Backend.Classes
                 throw new ArgumentOutOfRangeException("Noise level cannot be below 0");
             }
         }
-
-       
 
         public void Verify()
         {
