@@ -6,12 +6,15 @@ using SonicEar_Backend.Interfaces;
 namespace SonicEar_Backend.Models
 {
     public class MeasurementsRepository : IMeasurementsRepository
+
     {
         //private readonly List<Measurement> _measurements;
         private readonly ApplicationDbContext _context;
-        public MeasurementsRepository(ApplicationDbContext context) 
+        private readonly IDevicesRepository _devicesRepository;
+        public MeasurementsRepository(ApplicationDbContext context, IDevicesRepository devicesRepository) 
         {
             _context = context;
+            _devicesRepository = devicesRepository;
             //_measurements = new List<Measurement>();
         }
 
@@ -44,8 +47,16 @@ namespace SonicEar_Backend.Models
         public Measurement Create (Measurement measurement)
         {
             measurement.Verify();
-            _context.Measurements.Add(measurement);
-            _context.SaveChanges();
+
+            Device? device = _devicesRepository.GetById(measurement.DeviceId);
+            if(device != null)
+            {
+                measurement.Device = device;
+                _context.Measurements.Add(measurement);
+                _context.SaveChanges();
+            }
+
+
             return measurement;
         }
 
@@ -57,6 +68,8 @@ namespace SonicEar_Backend.Models
             Measurement? measurementToUpdate = _context.Measurements.FirstOrDefault(m => m.Id == id);
             if (measurementToUpdate != null)
             {
+                
+
                 measurementToUpdate.DeviceId = measurement.DeviceId;
                 measurementToUpdate.TimeStamp = measurement.TimeStamp;
                 measurementToUpdate.NoiseLevel = measurement.NoiseLevel;

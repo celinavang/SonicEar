@@ -1,14 +1,15 @@
 ﻿using SonicEar_Backend.Data;
+using SonicEar_Backend.Interfaces;
 
 namespace SonicEar_Backend.Models
 {
-    public class DevicesRepository
+    public class DevicesRepository : IDevicesRepository
     {
         
         // Vi opretter en liste af devices 
         // private readonly List<Device> _devices;
 
-        private readonly ApplicationDbContext _context;
+        protected readonly ApplicationDbContext _context;
 
         // Constructor
         public DevicesRepository(ApplicationDbContext context)

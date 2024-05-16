@@ -33,6 +33,12 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\device.html" />
+    <None Include="wwwroot\js\device.js" />
   </ItemGroup>
 
 </Project>
