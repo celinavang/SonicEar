@@ -1,4 +1,4 @@
-const baseurl = "https://sonicear-backendapi.azure-api.net/sonicear/apiDevice"
+const baseurl = "https://sonicear-backendapi.azure-api.net/sonicear/apiMeasurement"
 
 Vue.createApp({
     data() {

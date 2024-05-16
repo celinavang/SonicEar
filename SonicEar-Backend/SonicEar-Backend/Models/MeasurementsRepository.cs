@@ -38,11 +38,11 @@ namespace SonicEar_Backend.Models
 
         }
 
-        public List<Measurement> GetByDate(DateTime date)
-        {
-            List<Measurement> result = new List<Measurement>(_context.Measurements.Where(m => m.TimeStamp.Date == date.Date).Include(m => m.Device).ToList());
-            return result;
-        }
+        //public List<Measurement> GetByDate(DateTime date)
+        //{
+        //    List<Measurement> result = new List<Measurement>(_context.Measurements.Where(m => m.TimeStamp.Date == date.Date).Include(m => m.Device).ToList());
+        //    return result;
+        //}
 
         public Measurement Create (Measurement measurement)
         {

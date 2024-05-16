@@ -1,0 +1,46 @@
+﻿@page
+@model SonicEar_Frontend.Pages.measurementsModel
+@{
+}
+
+<div id="app">
+    {{errormessage}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h1>
+                    Målinger
+                </h1>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Enheds placering</th>
+                            <th scope="col">Tidspunkt</th>
+                            <th scope="col">Måling</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in items">
+                            <td>
+                                {{item.id}}
+                            </td>
+                            <td>
+                                {{item.device.location}}
+                            </td>
+                            <td>
+                                {{item.timeStamp}}
+                            </td>
+                            <td>
+                                {{item.noiseLevel}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="~/js/measurement.js"></script>

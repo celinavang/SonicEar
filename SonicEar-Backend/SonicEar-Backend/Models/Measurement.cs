@@ -15,10 +15,10 @@ namespace SonicEar_Backend.Classes
 
         [ForeignKey(nameof(DeviceId))]
         [DisplayName("Enhed")]
-        public Device Device { get; set; }
+        public Device? Device { get; set; }
 
         [DisplayName("Tidspunkt")]
-        public DateTime TimeStamp { get; set; }
+        public DateTime? TimeStamp { get; set; }
 
         [DisplayName("Måling")]
         public float NoiseLevel { get; set; }
