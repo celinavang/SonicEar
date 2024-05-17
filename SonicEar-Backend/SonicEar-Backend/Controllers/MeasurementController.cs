@@ -64,6 +64,7 @@ namespace SonicEar_Backend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [HttpPut]
         public ActionResult<Measurement> Put(int id, [FromBody] Measurement measurement) 
         {
             try
