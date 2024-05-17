@@ -54,12 +54,28 @@ namespace SonicEar_Backend.Controllers
                 Device createdDevice = _devicesRepository.Create(newDevice);
                 return Created("/" + createdDevice.Id, createdDevice);
             }
-            catch (Exception ex) when (ex is ArgumentNullException) 
+            catch (ArgumentNullException ex)  
             {
                 return BadRequest(ex.Message);
             }
         }
 
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<Device> Put(int id, [FromBody] Device device)
+        {
+            try
+            {
+                Device? updatedDevice = _devicesRepository.Update(device, id);
+                if (updatedDevice == null) return NotFound();
+                else return Ok(updatedDevice);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

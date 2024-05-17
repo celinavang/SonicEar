@@ -55,7 +55,24 @@ namespace SonicEar_Backend.Controllers
                 Measurement createdMeasurement = _measurementsRepository.Create(newMeasurement);
                 return Created("/" + createdMeasurement.Id, createdMeasurement);
             }
-            catch (Exception ex) when (ex is ArgumentNullException) 
+            catch (ArgumentOutOfRangeException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<Measurement> Put(int id, [FromBody] Measurement measurement) 
+        {
+            try
+            {
+                Measurement? updatedMeasurement = _measurementsRepository.Update(measurement, id);
+                if (updatedMeasurement == null) return NotFound();
+                else return Ok(updatedMeasurement);
+            }
+            catch(ArgumentOutOfRangeException ex)
             {
                 return BadRequest(ex.Message);
             }

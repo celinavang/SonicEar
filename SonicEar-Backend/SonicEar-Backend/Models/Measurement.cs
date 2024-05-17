@@ -23,13 +23,6 @@ namespace SonicEar_Backend.Classes
         [DisplayName("Måling")]
         public float NoiseLevel { get; set; }
 
-        public void VerifyDeviceId()
-        {
-            if (DeviceId == 0) 
-            {
-                throw new ArgumentNullException("Device Id cannot be 0");
-            }
-        }
 
         public void VerifyNoiseLevel()
         {
@@ -41,7 +34,6 @@ namespace SonicEar_Backend.Classes
 
         public void Verify()
         {
-            VerifyDeviceId();
             VerifyNoiseLevel();
         }
 
