@@ -5,7 +5,12 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonicEar-Backend", "SonicEar-Backend\SonicEar-Backend.csproj", "{F1893CEC-BF13-42D4-91DF-168EB1FCDD11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SonicEar-BackendTests", "SonicEar-BackendTests\SonicEar-BackendTests.csproj", "{7A5B8FE0-23EF-4129-9787-7CF18BB2D5F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonicEar-BackendTests", "SonicEar-BackendTests\SonicEar-BackendTests.csproj", "{7A5B8FE0-23EF-4129-9787-7CF18BB2D5F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonicEar-Frontend", "SonicEar-Frontend\SonicEar-Frontend.csproj", "{ED04ACF8-E91C-4CF2-96E1-9720A1193577}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F1893CEC-BF13-42D4-91DF-168EB1FCDD11} = {F1893CEC-BF13-42D4-91DF-168EB1FCDD11}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{7A5B8FE0-23EF-4129-9787-7CF18BB2D5F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A5B8FE0-23EF-4129-9787-7CF18BB2D5F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A5B8FE0-23EF-4129-9787-7CF18BB2D5F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED04ACF8-E91C-4CF2-96E1-9720A1193577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED04ACF8-E91C-4CF2-96E1-9720A1193577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED04ACF8-E91C-4CF2-96E1-9720A1193577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED04ACF8-E91C-4CF2-96E1-9720A1193577}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

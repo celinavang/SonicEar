@@ -1,8 +1,11 @@
-﻿namespace SonicEar_Backend.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SonicEar_Backend.Models
 {
     public class Device
     {
         // Properties
+        [Key]
         public int Id { get; set; }
         public string? Location { get; set; }
 
@@ -20,6 +23,12 @@
             {
                 throw new ArgumentNullException("Location cannot be null");
             }
+        }
+
+        public void Verify()
+        {
+
+            VerifyLocation();
         }
     }
 }

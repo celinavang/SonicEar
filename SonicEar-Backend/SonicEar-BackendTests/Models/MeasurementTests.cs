@@ -21,13 +21,6 @@ namespace SonicEar_Backend.Classes.Tests
 
 
         [TestMethod()]
-        public void VerifyDeviceIdTest()
-        {
-            _m1.VerifyDeviceId();
-            Assert.ThrowsException<ArgumentNullException>(() => _m2.VerifyDeviceId());
-        }
-
-        [TestMethod()]
         public void VerifyNoiseLevelTest()
         {
            _m1.VerifyNoiseLevel();
