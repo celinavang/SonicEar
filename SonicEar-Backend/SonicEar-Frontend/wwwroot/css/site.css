@@ -46,6 +46,67 @@ body {
     border-radius: 10px;
 }
 
+.top-navbar a{
+    text-decoration:none;
+}
+
+.nav-button {
+    background-color: white;
+    height: 50px !important;
+    border-radius: 25px;
+    min-width: 50px !important;
+    width: 50px;
+    padding-left: 15px;
+    padding-top: 11px;
+    padding-right: 15px;
+    transition: 0.5s;
+}
+
+    .nav-button p {
+        display: none;
+        padding: 10px;
+        color: white;
+        transition: 0.3s;
+    }
+    .nav-button img {
+        width: 20px;
+        margin: 0px !important;
+        transition: 0.3s;
+    }
+
+    .nav-button:has(:hover) {
+        transform: scale(1.05);
+        transition: 0.5s;
+        width: auto;
+        padding-left: 20px !important;
+    }
+
+        .nav-button:has(:hover) p {
+            display: initial;
+            color: #00000050;
+            transition: 0.5s;
+        }
+
+        .nav-button-active:has(:hover) p {
+            display: initial;
+            color: black;
+            transition: 0.5s;
+        }
+
+.nav-button:has(:hover) img {
+    transform: scale(1.1);
+}
+
+.nav-button-active {
+    width: auto;
+    padding-left: 20px!important;
+}
+
+    .nav-button-active p {
+        display: initial;
+        color:black;
+
+    }
 
 .table-header {
     font-family: "Fredoka", sans-serif;
