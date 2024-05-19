@@ -5,19 +5,20 @@
 
 <div id="app">
     {{errormessage}}
-    <div class="container">
+    <div class="">
         <div class="row">
-            <div class="col-md-5">
-                <h1>
+            <div>
+                <h3 class="table-header">
                     Målinger
-                </h1>
-                <table class="table">
-                    <thead class="thead-dark">
+                </h3>
+                <table class="full-table shdw">
+                    <thead>
                         <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Enheds placering</th>
-                            <th scope="col">Tidspunkt</th>
-                            <th scope="col">Måling</th>
+                            <th>#</th>
+                            <th>Enhedens placering</th>
+                            <th>Tidspunkt</th>
+                            <th>Måling</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,6 +34,9 @@
                             </td>
                             <td>
                                 {{item.noiseLevel}}
+                            </td>
+                            <td>
+                                todo
                             </td>
                         </tr>
                     </tbody>

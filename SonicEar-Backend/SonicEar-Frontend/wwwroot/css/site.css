@@ -1,11 +1,17 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
+
 
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
+    .main-container, .top-navbar {
+        margin-right: 10%!important;
+        margin-left: 10%!important;
+        width: 80%!important;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -18,5 +24,79 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: "Fredoka", sans-serif !important;
+}
+
+
+.main-container, .top-navbar {
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
+
+.main-container {
+    background-color: #ffffff;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+.top-navbar {
+    height: 100px;
+    border-radius: 10px;
+}
+
+
+.table-header {
+    font-family: "Fredoka", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #4a4d57;
+    margin-bottom: 25px;
+    
+}
+
+
+.full-table {
+    margin:0px!important;
+    width:100%;
+    border-radius: 3px;
+    background-color: #ffffff;
+    font-family: "Fredoka", sans-serif;
+    overflow:hidden;
+    
+}
+
+    .full-table th, td {
+        padding: 20px 30px 20px 30px;
+        
+    }
+
+    .full-table th {
+        background-color: #acc2e4;
+        font-weight: 500;
+    }
+
+    tr:nth-child(even){
+    background-color: #acc2e433 !important;
+    
+    }
+
+    .btn-round {
+        border-radius: 20px;
+        border: none;
+        background-color: #f5f5f5;
+        height:40px;
+        width: auto;
+        padding: 0px 15px;
+    }
+
+    .btn-circle {
+        width: 40px!important;
+        padding:6px;
+
+    }
+
+.shdw {
+    box-shadow: #13153031 0px 0px 6px 2px;
 }
