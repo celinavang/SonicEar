@@ -1,0 +1,21 @@
+﻿@page
+@model SonicEar_Frontend.Pages.Device.EditModel
+@{
+}
+<div id="app">
+    <h3>ID: {{item.id}}</h3>
+    <form>
+        <div class="">
+            <label>Placering</label>
+            <input v-model="item.location" />
+        </div>
+        <div>
+            
+        </div>
+    </form>
+    <button v-on:click="editDevice()">
+        gem
+    </button>
+</div>
+
+<script src="/js/deviceedit.js"></script>

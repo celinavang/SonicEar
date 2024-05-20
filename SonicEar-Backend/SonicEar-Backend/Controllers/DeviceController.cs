@@ -63,7 +63,7 @@ namespace SonicEar_Backend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [HttpPut]
+        [HttpPut("{id}")]
         public ActionResult<Device> Put(int id, [FromBody] Device device)
         {
             try

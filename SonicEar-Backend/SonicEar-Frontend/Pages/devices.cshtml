@@ -22,17 +22,20 @@
                         <tbody>
                             <tr v-for="item in items">
                                 <td>
-                                <a v-bind:href="'/device?id='+ item.id">
-                                    {{item.id}}</a>
+                                    {{item.id}}
                                 </td>
                                 <td>
                                     {{item.location}}
                                 </td>
                                 <td>
-                                    <button class="btn-round btn-circle shdw"><p>></p></button>
+                                <a v-bind:href="'/device?id='+ item.id">
+                                    <button class="btn-round btn-circle shdw"><p><img style="width:25px"src="~/images/arrow.png"/></p></button>
+                                </a>
                                 </td>
                             <td>
-                                <button class="btn-round btn-circle shdw"><p>|</p></button>
+                                <a v-bind:href="'/device/edit?id='+ item.id">
+                                    <button class="btn-round btn-circle shdw"><p><img style="width:25px" src="~/images/edit.png" /></p></button>
+                                </a>
                                 </td>
                             </tr>
                         </tbody>
