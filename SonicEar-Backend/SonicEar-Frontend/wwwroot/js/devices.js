@@ -15,6 +15,7 @@ Vue.createApp({
             try {
                 const response = await axios.get(baseurl)
                 this.items = await response.data
+
             } catch (ex) {
                 this.errormessage = ex.message
             }

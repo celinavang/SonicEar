@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\js\measurement.js" />
+    <Content Remove="wwwroot\js\measurements.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,8 +41,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\js\measurement.js" />
-    <None Include="wwwroot\js\device.js" />
+    <None Include="wwwroot\js\deviceInfo.js" />
+    <None Include="wwwroot\js\measurements.js" />
+    <None Include="wwwroot\js\devices.js" />
   </ItemGroup>
 
 </Project>

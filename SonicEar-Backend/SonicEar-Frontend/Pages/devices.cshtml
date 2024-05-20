@@ -3,7 +3,7 @@
 @{
 }
  <div id="app">
-        {{errormessage}}
+        {{errormessage}} 
         <div>
             <div class="row">
                 <div>
@@ -22,7 +22,8 @@
                         <tbody>
                             <tr v-for="item in items">
                                 <td>
-                                    {{item.id}}
+                                <a v-bind:href="'/device?id='+ item.id">
+                                    {{item.id}}</a>
                                 </td>
                                 <td>
                                     {{item.location}}
@@ -42,4 +43,4 @@
         </div>
     </div>
 
-    <script src="~/js/device.js"></script>
+    <script src="~/js/devices.js"></script>

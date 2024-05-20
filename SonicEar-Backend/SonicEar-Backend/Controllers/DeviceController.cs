@@ -18,9 +18,9 @@ namespace SonicEar_Backend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet]
-        public ActionResult<IEnumerable<Device>> Get()
+        public ActionResult<List<Device>> Get()
         {
-            IEnumerable<Device> result = _devicesRepository.GetAll();
+            List<Device> result = _devicesRepository.GetAllAsync().Result;
             if(result.Any())
             {
                 return Ok(result);

@@ -1,4 +1,5 @@
-﻿using SonicEar_Backend.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SonicEar_Backend.Data;
 using SonicEar_Backend.Interfaces;
 
 namespace SonicEar_Backend.Models
@@ -28,9 +29,10 @@ namespace SonicEar_Backend.Models
         }
 
         // GetAll metode, der returnerer listen af devices
-        public List<Device> GetAll()
+        public async Task<List<Device>> GetAllAsync()
         {
-            return new List<Device>(_context.Devices);
+            List<Device> result = await _context.Devices.ToListAsync();
+            return new List<Device>(result);
         }
 
         // GetById metode, der returnerer et device ud fra et id

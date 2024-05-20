@@ -45,6 +45,19 @@ namespace SonicEar_Backend.Controllers
             return Ok(measurement);
         }
 
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [HttpGet("device={deviceid}")]
+        public ActionResult<List<Measurement>> GetByDevice(int deviceId)
+        {
+            List<Measurement> measurements = _measurementsRepository.GetByDevice(deviceId);
+            if (!measurements.Any())
+            {
+                return NotFound();
+            }
+            return Ok(measurements);
+        }
+
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
