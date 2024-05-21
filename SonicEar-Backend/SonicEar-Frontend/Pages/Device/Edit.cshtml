@@ -11,7 +11,12 @@
     </div>
     <div class="group-form">
         <div style="float:right;">
-            <button class="btn-form" v-on:click="editDevice()">
+            <a v-bind:href="'/Device/Details?id=' + item.id">
+                <button class="btn-form" style="margin-right:10px;">
+                    Info
+                </button>
+            </a>
+            <button class="btn-form green" v-on:click="editDevice()">
                 gem
             </button>
         </div>
