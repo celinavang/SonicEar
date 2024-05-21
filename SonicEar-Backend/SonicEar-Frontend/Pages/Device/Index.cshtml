@@ -13,8 +13,11 @@
                 <table class="full-table shdw">
                         <thead>
                             <tr>
-                            <th style="width: 50px;">#</th>
-                                <th>Placering</th>
+                            <th style="width: 50px;">
+                                <a v-bind:href="'/Device/Details?id='+ item.id">
+
+                                <button v-on:click="sortById()">#</button></th>
+                            <th>Placering</th>
                             <th style="width: 100px;"></th>
                             <th style="width: 150px;"></th>
                             </tr>

@@ -6,6 +6,7 @@ Vue.createApp({
             allItem:[],
             items: [],
             errormessage: null,
+            currentSort: null
         }
     },
     async created() {
@@ -14,6 +15,8 @@ Vue.createApp({
     methods: {
         async getItems(url) {
             try {
+                const urlParems = new URLSearchParams(location.search)
+                this.currentSort = urlParems.get('sortBy')
                 const response = await axios.get(url)
                 this.allItems = await response.data
                 this.items = this.allItems

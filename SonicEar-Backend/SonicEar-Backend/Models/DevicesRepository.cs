@@ -32,24 +32,28 @@ namespace SonicEar_Backend.Models
         }
 
         // GetAll metode, der returnerer listen af devices
-        public List<Device> GetAll(string sortBy = null)
+        public List<Device> GetAll(string? sortBy)
         {
-            List<Device> devices = new(Data);
-            
+            List<Device> devices = new(_context.Devices);
+
             if (sortBy != null)
             {
                 switch (sortBy.ToLower())
                 {
-                    case "id":
-                        devices = devices.OrderBy(d => d.Id).ToList();
+                    default:
                         break;
-                   
+                    case "id_desc":
+                        devices = devices.OrderByDescending(d => d.Id).ToList();
+                        break;
+
+
                 }
             }
             return devices;
 
             //return new List<Device>(_context.Devices);
         }
+
 
         // GetById metode, der returnerer et device ud fra et id
         public Device? GetById(int id)
