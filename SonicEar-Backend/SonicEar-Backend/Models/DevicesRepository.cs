@@ -45,13 +45,18 @@ namespace SonicEar_Backend.Models
                     case "id_desc":
                         devices = devices.OrderByDescending(d => d.Id).ToList();
                         break;
-
+                    case "location_desc":
+                        devices = devices.OrderByDescending(d => d.Location).ToList();
+                        break;
+                    case "location_asc":
+                        devices = devices.OrderBy(d => d.Location).ToList();
+                        break;
+                   
 
                 }
             }
             return devices;
-
-            //return new List<Device>(_context.Devices);
+            
         }
 
 

@@ -13,6 +13,7 @@ namespace SonicEar_Backend.Models.Tests
     {
         private readonly Device _d1 = new() { Id = 1, Location = "TestLocation" };
         private readonly Device _d2 = new() { Id = 1, Location = null};
+        private readonly Device _d3 = new() { Id = 1, Location = "" };
 
 
         [TestMethod()]
@@ -39,6 +40,7 @@ namespace SonicEar_Backend.Models.Tests
             // Act & assert
             Assert.ThrowsException<ArgumentNullException>(() => _d2.VerifyLocation());
 
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _d3.VerifyLocation());
         }
     }
 }

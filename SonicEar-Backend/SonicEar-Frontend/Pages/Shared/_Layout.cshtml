@@ -33,8 +33,8 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <div class="nav-button @(Accessor.HttpContext.Request.Path.Value == "/measurements" ? "nav-button-active" : "" )">
-                                <a class="" asp-area="" asp-page="/Measurements"><img src="@(Accessor.HttpContext.Request.Path.Value == "/measurements" ? "/images/folder-active.png" : "/images/folder-inactive.png")" /> <p>Målinger</p></a>
+                            <div class="nav-button @(Accessor.HttpContext.Request.Path.Value == "/Measurement" ? "nav-button-active" : "" )">
+                                <a class="" asp-area="" asp-page="/Measurement/Index"><img src="@(Accessor.HttpContext.Request.Path.Value == "/Measurement" ? "/images/folder-active.png" : "/images/folder-inactive.png")" /> <p>Målinger</p></a>
                             </div>
                         </li>
                     </ul>

@@ -1,7 +1,8 @@
 ﻿@page
-@model SonicEar_Frontend.Pages.measurementsModel
+@model measurementsModel
 @{
 }
+
 
 <div id="app">
     {{errormessage}}
@@ -20,10 +21,18 @@
                 <table class="full-table shdw">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Enhedens placering</th>
-                            <th>Tidspunkt</th>
-                            <th>Måling</th>
+                            <th style="width: 50px;">
+                            <a v-bind:href="'/Measurement' + setSort('id')">#</a>  
+                            </th>
+                            <th>
+                            <a v-bind:href="'/Measurement' + setSort('location')">Enhedens placering</a>
+                            </th>
+                            <th>
+                            <a v-bind:href="'/Measurement' + setSort('time')">Tidspunkt</a>
+                            </th>
+                            <th>
+                            <a v-bind:href="'/Measurement' + setSort('measurement')">Måling</a>
+                            </th>
                             <th></th>
                         </tr>
                     </thead>

@@ -3,23 +3,32 @@
 @{
 }
 <div id="app">
+    <div class="infobox red" v-if="errormessage">
+        {{errormessage}}
+    </div>
     <div class="infobox green" v-if="confirmationmessage">
         {{confirmationmessage}}
     </div>
-    
-    <h3>ID: {{item.id}}</h3>
-    <form>
-        <div class="group-form" class="">
-            <label>Placering</label> <br />
-            <input v-model="item.location" />
+    <div class="group-form">
+        <div style="float:right;">
+            <button class="btn-form" v-on:click="editDevice()">
+                gem
+            </button>
         </div>
         <div>
-            
+            <h3>Enheds ID: {{item.id}}</h3>
+        </div>
+        
+    </div>
+   
+    <form>
+        <div class="group-form">
+            <label>Placering</label>
+            <input class="txt-input" v-model="item.location" />
         </div>
     </form>
-    <button class="" v-on:click="editDevice()">
-        gem
-    </button>
+
+    
 </div>
 
 <script src="/js/deviceedit.js"></script>

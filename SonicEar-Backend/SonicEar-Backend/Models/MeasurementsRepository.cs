@@ -19,11 +19,46 @@ namespace SonicEar_Backend.Models
             //_measurements = new List<Measurement>();
         }
 
-        public List<Measurement> GetAll()
+        public List<Measurement> GetAll(string? sortBy)
         {
+            List<Measurement> measurements = new(_context.Measurements.Include(m => m.Device));
 
-            return new List<Measurement>(_context.Measurements);
+            if (sortBy != null)
+            {
+                switch (sortBy.ToLower())
+                {
+                    default:
+                        break;
+                    case "id_desc":
+                        measurements = measurements.OrderByDescending(m => m.Id).ToList();
+                        break;
+                    case "location_desc":
+                        measurements = measurements.OrderByDescending(m => m.Device.Location).ToList();
+                        break;
+                    case "location_asc":
+                        measurements = measurements.OrderBy(m => m.Device.Location).ToList();
+                        break;
+                    case "time_desc":
+                        measurements = measurements.OrderByDescending(m => m.TimeStamp).ToList();
+                        break;
+                    case "time_asc":
+                        measurements = measurements.OrderBy(m => m.TimeStamp).ToList();
+                        break;
+                    case "noise_desc":
+                        measurements = measurements.OrderByDescending(m => m.NoiseLevel).ToList();
+                        break;
+                    case "noise_asc":
+                        measurements = measurements.OrderBy(m => m.NoiseLevel).ToList();
+                        break;
+
+
+                }
+            }
+            return measurements;
+            
         }
+
+      
 
         public Measurement? GetById(int id)
         {

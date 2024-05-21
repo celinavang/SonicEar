@@ -23,6 +23,10 @@ namespace SonicEar_Backend.Models
             {
                 throw new ArgumentNullException("Location cannot be null");
             }
+            if (Location.Length < 1)
+            {
+                throw new ArgumentOutOfRangeException("Location must be at least 1 char");
+            }
         }
 
         public void Verify()
