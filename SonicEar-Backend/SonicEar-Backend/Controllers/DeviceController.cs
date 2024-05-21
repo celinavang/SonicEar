@@ -67,7 +67,7 @@ namespace SonicEar_Backend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [HttpPut]
+        [HttpPut("{id}")]
         public ActionResult<Device> Put(int id, [FromBody] Device device)
         {
             try
@@ -76,10 +76,10 @@ namespace SonicEar_Backend.Controllers
                 if (updatedDevice == null) return NotFound();
                 else return Ok(updatedDevice);
             }
-            catch (ArgumentNullException ex)
+            catch (Exception ex) when (ex is ArgumentNullException || ex is ArgumentOutOfRangeException)
             {
-                return BadRequest(ex.Message);
-            }
+                return BadRequest("Placering skal være på mindst 1 tegn");
+            } 
         }
 
         [ProducesResponseType(StatusCodes.Status201Created)]

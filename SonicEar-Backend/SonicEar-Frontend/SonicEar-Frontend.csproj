@@ -42,6 +42,7 @@
 
   <ItemGroup>
     <None Include="wwwroot\js\deviceInfo.js" />
+	<None Include="wwwroot\js\deviceedit.js" />
     <None Include="wwwroot\js\measurements.js" />
     <None Include="wwwroot\js\devices.js" />
   </ItemGroup>

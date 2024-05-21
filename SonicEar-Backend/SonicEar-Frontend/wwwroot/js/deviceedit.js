@@ -6,7 +6,7 @@ Vue.createApp({
             item: null,
             errormessage: null,
             confirmationmessage: null,
-            id: null
+            id: null,
         }
     },
     created() {
@@ -24,19 +24,26 @@ Vue.createApp({
 
 
             } catch (ex) {
+                this.confirmationmessage = null
                 this.errormessage = ex.message
             }
         },
         async editDevice() {
-            const response = await axios.put(baseurl + this.item.id, this.item, {
-                headers: {
-                    "Content-Type": "application/json",
+            try {
+                const response = await axios.put(baseurl + this.item.id, this.item, {
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
+                })
+                if (response.status == "200") {
+                    this.confirmationmessage = 'Enheden er blevet gemt.'
+                    this.errormessage = null
                 }
-            })
-
-            if (response.status == "200")
-                this.confirmationmessage = 'Enheden er blevet gemt'
+            } catch (ex) {
+                this.confirmationmessage = null
+                this.errormessage = ex.response.data
+            }
             
-        }
+        },
     }
 }).mount("#app")

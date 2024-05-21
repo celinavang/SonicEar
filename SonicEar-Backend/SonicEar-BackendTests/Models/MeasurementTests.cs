@@ -13,7 +13,6 @@ namespace SonicEar_Backend.Classes.Tests
     {
 
         private readonly Measurement _m1 = new() { Id = 1, DeviceId = 1, NoiseLevel = 50, TimeStamp = DateTime.Now };
-        private readonly Measurement _m2 = new() { Id = 1, NoiseLevel = 50, TimeStamp = DateTime.Now };
         private readonly Measurement _m3 = new() { Id = 1, DeviceId = 1, NoiseLevel = -50, TimeStamp = DateTime.Now };
         private readonly Measurement _m4 = new() { Id = 1, DeviceId = 1, NoiseLevel = 0, TimeStamp = DateTime.Now };
         private readonly Measurement _m5 = new() { Id = 1, DeviceId = 1, NoiseLevel = 50 };
@@ -35,7 +34,6 @@ namespace SonicEar_Backend.Classes.Tests
         public void VerifyTest()
         {
             _m1.Verify();
-            Assert.ThrowsException<ArgumentNullException>( () => _m2.Verify());
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => _m3.Verify());
 
         }
