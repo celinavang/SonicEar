@@ -13,11 +13,17 @@ Vue.createApp({
         this.getItems(baseurl)
     },
     methods: {
-        async getItems(url) {
+        async getItems() {
             try {
                 const urlParems = new URLSearchParams(location.search)
-                this.currentSort = urlParems.get('sortBy')
-                const response = await axios.get(url)
+                if (urlParems.has('sortBy')) {
+                    this.currentSort = urlParems.get('sortBy')
+
+                    const response = await axios.get(baseurl + '?sortBy=' + currentSort)
+                }
+                else {
+                    const response = await axios.get(baseurl)
+                }
                 this.allItems = await response.data
                 this.items = this.allItems
                 console.log(this.allItems)
