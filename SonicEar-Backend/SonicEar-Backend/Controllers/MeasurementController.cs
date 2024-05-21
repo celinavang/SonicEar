@@ -19,9 +19,9 @@ namespace SonicEar_Backend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet]
-        public ActionResult<IEnumerable<Measurement>> Get()
+        public ActionResult<IEnumerable<Measurement>> Get([FromQuery] string? sortBy)
         {
-            IEnumerable<Measurement> result = _measurementsRepository.GetAll();
+            IEnumerable<Measurement> result = _measurementsRepository.GetAll(sortBy);
             if(result.Any())
             {
                 return Ok(result);
@@ -31,6 +31,8 @@ namespace SonicEar_Backend.Controllers
                 return NoContent();
             }
         }
+
+       
 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

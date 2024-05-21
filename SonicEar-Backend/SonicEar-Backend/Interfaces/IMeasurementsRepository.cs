@@ -4,7 +4,7 @@ namespace SonicEar_Backend.Interfaces
 {
     public interface IMeasurementsRepository
     {
-        public List<Measurement> GetAll();
+        public List<Measurement> GetAll(string? sortBy);
         public Measurement? GetById (int id);
         public List<Measurement> GetByDevice (int deviceId);
         //public List <Measurement> GetByDate (DateTime date);

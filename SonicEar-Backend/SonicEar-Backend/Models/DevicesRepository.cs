@@ -56,7 +56,6 @@ namespace SonicEar_Backend.Models
                 }
             }
             return devices;
-
             
         }
 

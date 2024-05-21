@@ -19,11 +19,52 @@ namespace SonicEar_Backend.Models
             //_measurements = new List<Measurement>();
         }
 
-        public List<Measurement> GetAll()
+        public List<Measurement> GetAll(string? sortBy)
         {
+            List<Measurement> measurements = new(_context.Measurements);
 
-            return new List<Measurement>(_context.Measurements);
+            if (sortBy != null)
+            {
+                switch (sortBy.ToLower())
+                {
+                    default:
+                        break;
+                    case "id_desc":
+                        measurements = measurements.OrderByDescending(m => m.Id).ToList();
+                        break;
+                    case "deviceId_desc":
+                        measurements = measurements.OrderByDescending(m => m.DeviceId).ToList();
+                        break;
+                    case "deviceId_asc":
+                        measurements = measurements.OrderBy(m => m.DeviceId).ToList();
+                        break;
+                    case "device_desc":
+                        measurements = measurements.OrderByDescending(m => m.Device).ToList();
+                        break;
+                    case "device_asc":
+                        measurements = measurements.OrderBy(m => m.Device).ToList();
+                        break;
+                    case "time_desc":
+                        measurements = measurements.OrderByDescending(m => m.TimeStamp).ToList();
+                        break;
+                    case "time_asc":
+                        measurements = measurements.OrderBy(m => m.TimeStamp).ToList();
+                        break;
+                    case "noiseLevel_desc":
+                        measurements = measurements.OrderByDescending(m => m.NoiseLevel).ToList();
+                        break;
+                    case "noiseLevel_asc":
+                        measurements = measurements.OrderBy(m => m.NoiseLevel).ToList();
+                        break;
+
+
+                }
+            }
+            return measurements;
+            
         }
+
+      
 
         public Measurement? GetById(int id)
         {
