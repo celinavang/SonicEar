@@ -45,8 +45,8 @@ Vue.createApp({
                     else return '?sortBy=time_desc'
                     break;
                 case 'measurement':
-                    if (this.currentSort == 'noiseLevel_desc') return '?sortBy=noiseLevel_asc'
-                    else return '?sortBy=noiseLevel_desc'
+                    if (this.currentSort == 'noise_desc') return '?sortBy=noise_asc'
+                    else return '?sortBy=noise_desc'
                     break;
                 default:
                     break;

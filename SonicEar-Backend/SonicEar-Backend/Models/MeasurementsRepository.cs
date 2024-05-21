@@ -38,10 +38,10 @@ namespace SonicEar_Backend.Models
                     case "time_asc":
                         measurements = measurements.OrderBy(m => m.TimeStamp).ToList();
                         break;
-                    case "noiseLevel_desc":
+                    case "noise_desc":
                         measurements = measurements.OrderByDescending(m => m.NoiseLevel).ToList();
                         break;
-                    case "noiseLevel_asc":
+                    case "noise_asc":
                         measurements = measurements.OrderBy(m => m.NoiseLevel).ToList();
                         break;
 
