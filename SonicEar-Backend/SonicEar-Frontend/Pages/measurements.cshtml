@@ -11,6 +11,12 @@
                 <h3 class="table-header">
                     Målinger
                 </h3>
+                <div class="search-button">
+                    <div>
+                        <input v-model="SearchQuery" type="text" placeholder="Søgefelt - first try D:" />
+                        <button v-on:click="search">Search</button>
+                    </div>
+                </div>
                 <table class="full-table shdw">
                     <thead>
                         <tr>
