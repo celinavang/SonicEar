@@ -2,6 +2,7 @@
 using SonicEar_Backend.Classes;
 using SonicEar_Backend.Data;
 using SonicEar_Backend.Interfaces;
+using System.Globalization;
 
 namespace SonicEar_Backend.Models
 {
@@ -20,6 +21,7 @@ namespace SonicEar_Backend.Models
 
         public List<Measurement> GetAll()
         {
+
             return new List<Measurement>(_context.Measurements);
         }
 
@@ -47,7 +49,7 @@ namespace SonicEar_Backend.Models
         public Measurement Create (Measurement measurement)
         {
             measurement.Verify();
-
+            
             Device? device = _devicesRepository.GetById(measurement.DeviceId);
             if(device != null)
             {

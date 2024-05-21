@@ -28,8 +28,8 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" >
                     <ul class="navbar-nav flex-grow-1 justify-content-center">
                         <li class="nav-item">
-                            <div class="nav-button @(Accessor.HttpContext.Request.Path.Value == "/devices" ? "nav-button-active" : "")" style="margin-right: 15px;">
-                                <a class="" asp-area="" asp-page="/Devices"><img src=" @(Accessor.HttpContext.Request.Path.Value == "/devices" ? "/images/device-active.png" : "/images/device-inactive.png")" /> <p>Enheder</p></a>
+                            <div class="nav-button @(Accessor.HttpContext.Request.Path.Value == "/Device" ? "nav-button-active" : "")" style="margin-right: 15px;">
+                                <a class="" asp-area="" asp-page="/Device/Index"><img src=" @(Accessor.HttpContext.Request.Path.Value == "/Device" ? "/images/device-active.png" : "/images/device-inactive.png")" /> <p>Enheder</p></a>
                             </div>
                         </li>
                         <li class="nav-item">
