@@ -143,6 +143,8 @@ body {
     
     }
 
+
+
     .btn-round {
         border-radius: 20px;
         border: none;
@@ -172,7 +174,7 @@ body {
 }
 
 .green {
-    background-color: #9bbe98;
+    background-color: #9bbe98!important;
 }
 
 .red {
@@ -204,9 +206,9 @@ body {
     background-color: #eaeaea;
     border-radius: 7px;
     box-shadow: rgba(0,0,0,0.1) 0px 0px 3px 2px inset;
-    padding-left:15px;
-    padding-right:15pc;
-    margin:0px;
+    padding-left: 15px;
+    padding-right: 15pc;
+    margin: 0px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -216,3 +218,11 @@ body {
 .search {
     background-color: pink;
 }
+}
+.level{
+    width: 40px;
+    height: 10px;
+    border-radius: 5px;
+    
+}
+
