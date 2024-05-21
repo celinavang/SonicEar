@@ -3,17 +3,21 @@
 @{
 }
 <div id="app">
+    <div class="infobox green" v-if="confirmationmessage">
+        {{confirmationmessage}}
+    </div>
+    
     <h3>ID: {{item.id}}</h3>
     <form>
-        <div class="">
-            <label>Placering</label>
+        <div class="group-form" class="">
+            <label>Placering</label> <br />
             <input v-model="item.location" />
         </div>
         <div>
             
         </div>
     </form>
-    <button v-on:click="editDevice()">
+    <button class="" v-on:click="editDevice()">
         gem
     </button>
 </div>

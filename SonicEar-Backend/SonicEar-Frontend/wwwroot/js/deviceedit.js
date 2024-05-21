@@ -5,6 +5,7 @@ Vue.createApp({
         return {
             item: null,
             errormessage: null,
+            confirmationmessage: null,
             id: null
         }
     },
@@ -26,12 +27,16 @@ Vue.createApp({
                 this.errormessage = ex.message
             }
         },
-        async editDevice(item) {
+        async editDevice() {
             const response = await axios.put(baseurl + this.item.id, this.item, {
                 headers: {
                     "Content-Type": "application/json",
                 }
-            });
+            })
+
+            if (response.status == "200")
+                this.confirmationmessage = 'Enheden er blevet gemt'
+            
         }
     }
 }).mount("#app")
