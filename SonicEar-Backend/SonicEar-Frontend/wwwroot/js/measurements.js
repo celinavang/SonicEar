@@ -31,6 +31,7 @@ Vue.createApp({
         },
         setSort(sortBy) {
             switch (sortBy) {
+
                 case 'id':
                     if (this.currentSort == 'id_desc') return ''
                     else return '?sortBy=id_desc'
