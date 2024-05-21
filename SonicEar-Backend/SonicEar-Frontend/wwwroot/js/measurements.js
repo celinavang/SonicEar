@@ -5,18 +5,38 @@ Vue.createApp({
         return {
             items: [],
             errormessage: null,
+            currentSort: null,
         }
     },
-    created() {
+    async created() {
         this.getItems()
     },
     methods: {
         async getItems() {
             try {
-                const response = await axios.get(baseurl)
+                let response = await axios.get(baseurl)
+
+                const urlParems = new URLSearchParams(location.search)
+
+                if (urlParems.has('sortBy')) {
+                    this.currentSort = urlParems.get('sortBy')
+                    console.log(urlParems.get('sortBy'))
+                    response = await axios.get(baseurl + '?sortBy=' + this.currentSort)
+                }
+
                 this.items = await response.data
             } catch (ex) {
-                this.errormessage = ex.message
+                alert(ex.message)
+            }
+        },
+        setSort(sortBy) {
+            switch (sortBy) {
+                case 'id':
+                    if (this.currentSort == 'id_desc') return ''
+                    else return '?sortBy=id_desc'
+                    break;
+                default:
+                    break;
             }
         }
     }

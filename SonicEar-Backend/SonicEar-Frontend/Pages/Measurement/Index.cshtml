@@ -3,6 +3,7 @@
 @{
 }
 
+
 <div id="app">
     {{errormessage}}
     <div class="">
@@ -14,7 +15,9 @@
                 <table class="full-table shdw">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>
+                            <a v-bind:href="'/Measurement' + setSort('location')">#</a>  
+                            </th>
                             <th>Enhedens placering</th>
                             <th>Tidspunkt</th>
                             <th>Måling</th>
