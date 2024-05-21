@@ -21,7 +21,7 @@ namespace SonicEar_Backend.Models
 
         public List<Measurement> GetAll(string? sortBy)
         {
-            List<Measurement> measurements = new(_context.Measurements);
+            List<Measurement> measurements = new(_context.Measurements.Include(m => m.Device));
 
             if (sortBy != null)
             {
@@ -31,6 +31,12 @@ namespace SonicEar_Backend.Models
                         break;
                     case "id_desc":
                         measurements = measurements.OrderByDescending(m => m.Id).ToList();
+                        break;
+                    case "location_desc":
+                        measurements = measurements.OrderByDescending(m => m.Device.Location).ToList();
+                        break;
+                    case "location_asc":
+                        measurements = measurements.OrderBy(m => m.Device.Location).ToList();
                         break;
                     case "time_desc":
                         measurements = measurements.OrderByDescending(m => m.TimeStamp).ToList();

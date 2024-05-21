@@ -39,7 +39,7 @@ Vue.createApp({
                 //case 'location':
                 //    if (this.currentSort == 'location_desc') return '?sortBy=location_asc'
                 //    else return '?sortBy=location_desc'
-                 /*   break;*/
+                //    break;
                 case 'time':
                     if (this.currentSort == 'time_desc') return '?sortBy=time_asc'
                     else return '?sortBy=time_desc'
