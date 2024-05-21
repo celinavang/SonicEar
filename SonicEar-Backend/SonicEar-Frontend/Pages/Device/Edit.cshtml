@@ -1,0 +1,25 @@
+﻿@page
+@model SonicEar_Frontend.Pages.Device.EditModel
+@{
+}
+<div id="app">
+    <div class="infobox green" v-if="confirmationmessage">
+        {{confirmationmessage}}
+    </div>
+    
+    <h3>ID: {{item.id}}</h3>
+    <form>
+        <div class="group-form" class="">
+            <label>Placering</label> <br />
+            <input v-model="item.location" />
+        </div>
+        <div>
+            
+        </div>
+    </form>
+    <button class="" v-on:click="editDevice()">
+        gem
+    </button>
+</div>
+
+<script src="/js/deviceedit.js"></script>

@@ -7,7 +7,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
  <div id="app">
-        {{errormessage}}
+        {{errormessage}} 
         <div>
             <div class="row">
                 <div>
@@ -32,10 +32,14 @@
                                     {{item.location}}
                                 </td>
                                 <td>
-                                    <button class="btn-round btn-circle shdw"><p>></p></button>
+                                <a v-bind:href="'/device?id='+ item.id">
+                                    <button class="btn-round btn-circle shdw"><p><img style="width:25px"src="~/images/arrow.png"/></p></button>
+                                </a>
                                 </td>
                             <td>
-                                <button class="btn-round btn-circle shdw"><p>|</p></button>
+                                <a v-bind:href="'/device/edit?id='+ item.id">
+                                    <button class="btn-round btn-circle shdw"><p><img style="width:25px" src="~/images/edit.png" /></p></button>
+                                </a>
                                 </td>
                             </tr>
                         </tbody>
@@ -46,4 +50,4 @@
         </div>
     </div>
 
-    <script src="~/js/device.js"></script>
+    <script src="~/js/devices.js"></script>

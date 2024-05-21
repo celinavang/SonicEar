@@ -161,3 +161,23 @@ body {
 .shdw {
     box-shadow: #13153031 0px 0px 6px 2px;
 }
+
+
+.infobox {
+    padding: 20px;
+    border-radius:5px;
+    margin-bottom: 15px;
+    color:white;
+    font-weight:500;
+}
+
+.green {
+    background-color: #9bbe98;
+}
+
+.btn-form {
+
+}
+
+.group-form{
+}
