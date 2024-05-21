@@ -3,21 +3,31 @@ const baseurl = "https://sonicear-backendapi.azure-api.net/sonicear/apiDevice"
 Vue.createApp({
     data() {
         return {
+            allItem:[],
             items: [],
             errormessage: null,
         }
     },
-    created() {
-        this.getItems()
+    async created() {
+        this.getItems(baseurl)
     },
     methods: {
-        async getItems() {
+        async getItems(url) {
             try {
-                const response = await axios.get(baseurl)
-                this.items = await response.data
+                const response = await axios.get(url)
+                this.allItems = await response.data
+                this.items = this.allItems
+                console.log(this.allItems)
             } catch (ex) {
-                this.errormessage = ex.message
+                alert(ex.message)
             }
+        },
+        sortById() {
+            /*this.items.sort((item1,item2) => item1.id - item2.id)*/
+            this.getItems(baseurl + "?sort_by=id")
+        },
+        sortByLocation() {
+            this.getItems(baseurl + "?sort_by=location")
         }
     }
 }).mount("#app")

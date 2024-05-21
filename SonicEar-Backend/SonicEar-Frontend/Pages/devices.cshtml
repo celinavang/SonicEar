@@ -2,6 +2,10 @@
 @model SonicEar_Frontend.Pages.devicesModel
 @{
 }
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
  <div id="app">
         {{errormessage}}
         <div>
@@ -13,7 +17,7 @@
                 <table class="full-table shdw">
                         <thead>
                             <tr>
-                            <th style="width: 50px;">#</th>
+                            <th style="width: 50px;"><button v-on:click="sortById()">#</button></th>
                                 <th>Placering</th>
                             <th style="width: 100px;"></th>
                             <th style="width: 150px;"></th>

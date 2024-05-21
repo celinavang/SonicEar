@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SonicEar_Backend.Interfaces;
 using SonicEar_Backend.Models;
+using System.Reflection.Metadata.Ecma335;
 
 namespace SonicEar_Backend.Controllers
 {
@@ -18,10 +19,11 @@ namespace SonicEar_Backend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet]
-        public ActionResult<IEnumerable<Device>> Get()
+        public ActionResult<IEnumerable<Device>> Get([FromQuery] string? sortBy)
         {
-            IEnumerable<Device> result = _devicesRepository.GetAll();
-            if(result.Any())
+            
+            IEnumerable<Device> result = _devicesRepository.GetAll(sortBy);
+            if (result.Any())
             {
                 return Ok(result);
             }
@@ -29,7 +31,9 @@ namespace SonicEar_Backend.Controllers
             {
                 return NoContent();
             }
+
         }
+
 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
