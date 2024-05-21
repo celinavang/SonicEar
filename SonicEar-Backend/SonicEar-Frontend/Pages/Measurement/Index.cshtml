@@ -18,9 +18,15 @@
                             <th style="width: 50px;">
                             <a v-bind:href="'/Measurement' + setSort('id')">#</a>  
                             </th>
-                            <th>Enhedens placering</th>
-                            <th>Tidspunkt</th>
-                            <th>Måling</th>
+                            <th>
+                            @* <a v-bind:href="'/Device' + setSort('location')"> *@Enhedens placering</a>
+                            </th>
+                            <th>
+                            <a v-bind:href="'/Measurement' + setSort('time')">Tidspunkt</a>
+                            </th>
+                            <th>
+                            <a v-bind:href="'/Measurement' + setSort('measurement')">Måling</a>
+                            </th>
                             <th></th>
                         </tr>
                     </thead>

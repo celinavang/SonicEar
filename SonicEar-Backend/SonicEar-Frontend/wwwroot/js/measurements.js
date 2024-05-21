@@ -36,6 +36,18 @@ Vue.createApp({
                     if (this.currentSort == 'id_desc') return ''
                     else return '?sortBy=id_desc'
                     break;
+                //case 'location':
+                //    if (this.currentSort == 'location_desc') return '?sortBy=location_asc'
+                //    else return '?sortBy=location_desc'
+                 /*   break;*/
+                case 'time':
+                    if (this.currentSort == 'time_desc') return '?sortBy=time_asc'
+                    else return '?sortBy=time_desc'
+                    break;
+                case 'measurement':
+                    if (this.currentSort == 'noiseLevel_desc') return '?sortBy=noiseLevel_asc'
+                    else return '?sortBy=noiseLevel_desc'
+                    break;
                 default:
                     break;
             }

@@ -32,18 +32,6 @@ namespace SonicEar_Backend.Models
                     case "id_desc":
                         measurements = measurements.OrderByDescending(m => m.Id).ToList();
                         break;
-                    case "deviceId_desc":
-                        measurements = measurements.OrderByDescending(m => m.DeviceId).ToList();
-                        break;
-                    case "deviceId_asc":
-                        measurements = measurements.OrderBy(m => m.DeviceId).ToList();
-                        break;
-                    case "device_desc":
-                        measurements = measurements.OrderByDescending(m => m.Device).ToList();
-                        break;
-                    case "device_asc":
-                        measurements = measurements.OrderBy(m => m.Device).ToList();
-                        break;
                     case "time_desc":
                         measurements = measurements.OrderByDescending(m => m.TimeStamp).ToList();
                         break;
