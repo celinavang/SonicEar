@@ -6,10 +6,13 @@ Vue.createApp({
             items: [],
             errormessage: null,
             currentSort: null,
+            searchQuery: "",
+            filteredItems: []
         }
     },
-    async created() {
-        this.getItems()
+     async created() {
+        await this.getItems();
+        this.filteredItems = this.items;
     },
     methods: {
         async getItems() {
@@ -24,12 +27,14 @@ Vue.createApp({
                     response = await axios.get(baseurl + '?sortBy=' + this.currentSort)
                 }
 
-                this.items = await response.data
+                this.items = await response.data;
+                this.filteredItems = this.items;
             } catch (ex) {
                 alert(ex.message)
             }
         },
         setSort(sortBy) {
+            let sortParam = "";
             switch (sortBy) {
 
                 case 'id':
@@ -51,6 +56,8 @@ Vue.createApp({
                 default:
                     break;
             }
+            this.currentSort = sortParam;
+            this.getItems();
         },
         getColor(level) {
             if (level < 10) {
@@ -66,6 +73,14 @@ Vue.createApp({
             } else if (level < 60) {
                 return '#d87855'
             } else { return '#c94b3a' }
+        },
+
+        search() {
+            const query = this.searchQuery.toLowerCase();
+            this.filteredItems = this.items.filter(item =>
+                item.device.location.toLowerCase().includes(query) ||
+                item.timeStamp.toLowerCase().includes(query)
+            )
         }
     }
 }).mount("#app")

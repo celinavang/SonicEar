@@ -16,7 +16,7 @@
                 <!--TODO// få filtreret søgningskritierer - kun til lokation og tidspunkter-->
                 <div class="search-div">
                     <div>
-                        <input v-model="SearchQuery" type="text" placeholder="Søgefelt - first try D:" />
+                        <input v-model="searchQuery" type="text" placeholder="Søgefelt - first try D:" />
                         <button class="search-button" v-on:click="search">Search</button>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="item in items">
+                        <tr v-for="item in filteredItems" :key="item.id">
                             <td>
                                 {{item.id}}
                             </td>
