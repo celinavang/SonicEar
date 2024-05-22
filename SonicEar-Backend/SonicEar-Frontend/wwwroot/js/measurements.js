@@ -12,7 +12,9 @@ Vue.createApp({
     },
     async created() {
         await this.getItems();
+        await this.DisplayList(3,1)
         this.filteredItems = this.items;
+
     },
     methods: {
         async getItems() {
@@ -28,7 +30,7 @@ Vue.createApp({
                 }
 
                 this.items = await response.data;
-                this.filteredItems = this.items;
+                
             } catch (ex) {
                 alert(ex.message)
             }
@@ -80,6 +82,14 @@ Vue.createApp({
                 item.device.location.toLowerCase().includes(query) ||
                 item.timeStamp.toLowerCase().includes(query)
             )
+        },
+        async DisplayList(rows_per_page, page) {
+            page--;
+            let start = rows_per_page * page;
+            let end = start + rows_per_page;
+            let paginatedItems = this.items.slice(start, end);
+            this.items = paginatedItems
+          
         }
     }
 }).mount("#app")

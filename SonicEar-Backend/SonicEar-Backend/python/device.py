@@ -65,15 +65,15 @@ def send():
     getRef = checkNumber(lastsend)
     screen.fill(getRef["color"])
     # check there is any noise
-    if (db > 5):
+    if (number > 5):
         
-        if db > getRef["upper"] or db < getRef["lower"]:
-            data = {"id":0,"deviceId":device_id,"device":{"id":0,"location":"string"},"timeStamp":date["datetime"],"noiseLevel":db}
+        if number > getRef["upper"] or number < getRef["lower"]:
+            data = {"id":0,"deviceId":device_id,"device":{"id":0,"location":"string"},"timeStamp":date["datetime"],"noiseLevel":number}
             response = requests.post(api_url, data=json.dumps(data), headers=headers)
-            lastsend = db
+            lastsend = number
             response.status_code
             response.json()
-        else: print("not changed " + str(db) + " - " + str(lastsend) )
+        else: print("not changed " + str(number) + " - " + str(lastsend) )
     
 
 
