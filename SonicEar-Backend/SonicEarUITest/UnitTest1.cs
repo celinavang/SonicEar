@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using System;
 
@@ -12,7 +12,7 @@ namespace SonicEarUITest
     {
 
         // Providing the path to the chrome driver
-        private static readonly string DriverDirectory = "C:\\webDrivers";
+        private static readonly string DriverDirectory = "C:\\webDrivers\\geckodriver.exe";
         private static IWebDriver _driver;
 
 
@@ -20,13 +20,24 @@ namespace SonicEarUITest
         // Setting up the chrome driver
         public static void Setup(TestContext context)
         {
-            _driver = new ChromeDriver(DriverDirectory);
+            var options = new FirefoxOptions();
+            IWebDriver driver = new FirefoxDriver(options);
         }
 
         [ClassCleanup]
         public static void TestCleanup()
         {
-            _driver.Quit();
+            if (_driver != null)
+            {
+                try
+                {
+                    _driver.Quit();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error closing WebDriver: " + ex.Message);
+                }
+            }
         }
 
         [TestMethod]
