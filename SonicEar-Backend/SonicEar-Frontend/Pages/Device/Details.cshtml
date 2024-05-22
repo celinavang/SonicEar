@@ -3,8 +3,20 @@
 @{
 }
 <div id="app">
-    <h3>ID: {{item.id}}</h3>
-    <h4>Location: {{item.location}}</h4>
+    <div class="group-form">
+        <div style="float:right;">
+            <a v-bind:href="'/Device/Edit?id=' + item.id">
+                <button class="btn-round btn-circle shdw" style="margin-right:10px;">
+                    <img src="/images/edit.png">
+                </button>
+            </a>
+        </div>
+        <div>
+            <h3>Enheds ID: {{item.id}}</h3>
+            <h4>Location: {{item.location}}</h4>
+        </div>
+    </div>
+    
 
     <div>
         <div class="row">

@@ -4,14 +4,13 @@
 }
 
 <div id="app">
+    <div v-if="confirmationmessage" class="infobox green">{{confirmationmessage}}</div>
     <h1>Create new device</h1>
     <form>
-@*         <label for="id">Id</label>
-        <input type="number" id="id" v-model="formData.id" /> *@
         <label for="location">Location</label>
-        <input type="text" itemid="location" v-model="location" />
-        <button v-on:click="createNewDevice()">Create</button>
+        <input v-model="location" />
     </form>
+    <button v-on:click="createNewDevice()">Create</button>
     <p v-if="response">{{ response }}</p>
 </div>
 
