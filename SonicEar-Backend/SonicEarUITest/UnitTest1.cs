@@ -30,12 +30,24 @@ namespace SonicEarUITest
         {
             //Navigating to the website
             _driver.Navigate().GoToUrl("https://localhost:7039/");
-            //_driver.Navigate().GoToUrl("C:\\VSRepositories\\Eksamen\\SonicEar-Backend\\SonicEar-Frontend\\Pages\\Index.cshtml");
 
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
 
             //Verifying the title of the page
             Assert.AreEqual("SonicEar", _driver.Title);
+
+            // Finding the Login button by ID
+            IWebElement login = _driver.FindElement(By.Id("loginButtonId"));
+
+            // Clicking said button, seeing if the login button works
+            login.Click();
+            WebDriverWait waitt = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
+            
         }
+
+
+
+
+
     }
 }
