@@ -29,13 +29,13 @@ namespace SonicEarUITest
         public void TestWebsite()
         {
             //Navigating to the website
-            _driver.Navigate().GoToUrl("C:\\VSRepositories\\Eksamen\\SonicEar-Backend\\SonicEar-Frontend\\Pages\\Index.cshtml");
+            _driver.Navigate().GoToUrl("https://localhost:7039/");
+            //_driver.Navigate().GoToUrl("C:\\VSRepositories\\Eksamen\\SonicEar-Backend\\SonicEar-Frontend\\Pages\\Index.cshtml");
 
-            // Wait for the title to be what we expect
-  
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
 
             //Verifying the title of the page
-            Assert.AreEqual("", _driver.Title);
+            Assert.AreEqual("SonicEar", _driver.Title);
         }
     }
 }
