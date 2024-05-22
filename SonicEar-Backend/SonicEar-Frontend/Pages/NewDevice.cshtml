@@ -1,0 +1,18 @@
+﻿@page
+@model SonicEar_Frontend.Pages.NewDeviceModel
+@{
+}
+
+<div id="app">
+    <h1>Create new device</h1>
+    <form>
+@*         <label for="id">Id</label>
+        <input type="number" id="id" v-model="formData.id" /> *@
+        <label for="location">Location</label>
+        <input type="text" itemid="location" v-model="location" />
+        <button v-on:click="createNewDevice()">Create</button>
+    </form>
+    <p v-if="response">{{ response }}</p>
+</div>
+
+<script src="~/js/newDevice.js"></script>
