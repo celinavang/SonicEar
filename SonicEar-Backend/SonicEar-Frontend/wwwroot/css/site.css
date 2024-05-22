@@ -235,10 +235,6 @@ body {
 }
 
 =======
-.btn-paging {
-    color: black;
-    background-color: #acc2e4;
-}
 
 
 .sort-link {
@@ -252,3 +248,58 @@ body {
     
 }
 >>>>>>> Stashed changes
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, #410358, #4700bc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pages {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    color: #383838;
+    padding: 10px 40px;
+    border-radius: 6px
+
+}
+.page-ul{
+    margin: 20px 30px;
+}
+    .page-ul .page-link {
+        display: inline-block;
+        margin: 0 10px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        text-align: center;
+        font-size;
+        22px;
+        font-weight: 500;
+        line-height: 45px;
+        cursor: pointer;
+        background-position: 0 -45px;
+        transition: background-position 0.5s;
+    }
+    .page-ul li.active {
+        color: #fff;
+        background-image: linear-gradient(#ff4568, #ff4568);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+    }
+
+.page-btn{
+    display: inline-flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 500; 
+    color: #383838;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer; 
+}
