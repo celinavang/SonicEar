@@ -213,6 +213,7 @@ body {
     margin-bottom: 10px;
 }
 
+<<<<<<< Updated upstream
 
 /*todo*/
 .search {
@@ -226,3 +227,21 @@ body {
 
 }
 
+=======
+.btn-paging {
+    color: black;
+    background-color: #acc2e4;
+}
+
+
+.sort-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.sort-link:hover {
+    color: #193172;
+    
+}
+>>>>>>> Stashed changes

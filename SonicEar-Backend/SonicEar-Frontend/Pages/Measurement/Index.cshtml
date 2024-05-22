@@ -24,16 +24,16 @@
                     <thead>
                         <tr>
                             <th style="width: 50px;">
-                            <a v-bind:href="'/Measurement' + setSort('id')">#</a>  
+                                <a class="sort-link" v-bind:href="'/Measurement' + setSort('id')">#</a>
                             </th>
                             <th>
-                            <a v-bind:href="'/Measurement' + setSort('location')">Enhedens placering</a>
+                                <a class="sort-link" v-bind:href="'/Measurement' + setSort('location')">Enhedens placering</a>
                             </th>
                             <th>
-                            <a v-bind:href="'/Measurement' + setSort('time')">Tidspunkt</a>
+                                <a class="sort-link" v-bind:href="'/Measurement' + setSort('time')">Tidspunkt</a>
                             </th>
                             <th>
-                            <a v-bind:href="'/Measurement' + setSort('measurement')">Måling</a>
+                                <a class="sort-link" v-bind:href="'/Measurement' + setSort('measurement')">Måling</a>
                             </th>
                             <th></th>
                         </tr>
@@ -63,5 +63,8 @@
         </div>
     </div>
 </div>
+<br/>
+<button v-on:click="previous()" :disabled="currentPage == 1" class="btn btn-paging">Forrige</button>
+<button v-on:click="next()" class="btn btn-paging">Næste</button>
 
 <script src="~/js/measurements.js"></script>
