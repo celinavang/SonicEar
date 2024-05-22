@@ -10,7 +10,7 @@ Vue.createApp({
             filteredItems: []
         }
     },
-     async created() {
+    async created() {
         await this.getItems();
         this.filteredItems = this.items;
     },
@@ -74,8 +74,6 @@ Vue.createApp({
                 return '#d87855'
             } else { return '#c94b3a' }
         },
-        },
-
         search() {
             const query = this.searchQuery.toLowerCase();
             this.filteredItems = this.items.filter(item =>
