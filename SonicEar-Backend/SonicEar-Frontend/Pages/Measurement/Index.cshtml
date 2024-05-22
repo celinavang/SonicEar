@@ -53,7 +53,7 @@
                                 {{item.noiseLevel}}
                             </td>
                             <td>
-                                todo
+                                <div v-bind:style="'background-color:' + getColor(item.noiseLevel)" class="level"></div>
                             </td>
                         </tr>
                     </tbody>
