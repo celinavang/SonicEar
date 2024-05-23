@@ -58,11 +58,8 @@
 
     <div class="container">
         <div style="width:150px; margin-left:auto; margin-right:auto; margin-top:30px">
-            <button class="page-btn" v-on:click="setPage(currentPage-1)"><img src="~/images/left.png" style="width:40px;" /></button>
-            @*  <ul class="page-ul">
-            <li v-for="index in pageAmount" :key="index" class="page-link" v-on:click="setPage(index)">{{index}}</li>
-            </ul> *@
-            <button class="page-btn" v-on:click="setPage(currentPage+1)"><img src="~/images/right.png" style="width:40px;" /></button>
+            <button class="page-btn" v-on:click="setPage(currentPage-1)"><img src="~/images/pagearrow.png" style="width:60px; transform:rotate(180deg);" /></button>
+            <button class="page-btn" v-on:click="setPage(currentPage+1)"><img src="~/images/pagearrow.png" style="width:60px;" /></button>
         </div>
     </div>
 </div>

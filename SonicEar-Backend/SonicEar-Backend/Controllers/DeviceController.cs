@@ -60,7 +60,7 @@ namespace SonicEar_Backend.Controllers
             }
             catch (ArgumentNullException ex)  
             {
-                return BadRequest(ex.Message);
+                return BadRequest("Indtast venligst en lokation");
             }
         }
 
