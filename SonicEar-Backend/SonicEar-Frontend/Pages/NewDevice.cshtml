@@ -9,7 +9,7 @@
     <h1>Opret enhed</h1>
     <form>
         <label for="location">Enhedens lokation</label>
-        <input class="txt-input" v-bind:value="location" v-model="location"/>
+        <input class="txt-input" v-for="location" v-model="location" />
     </form>
     <button class="btn-form" v-on:click="createNewDevice()">Opret</button>
     <p v-if="response">{{ response }}</p>

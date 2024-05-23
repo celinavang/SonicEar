@@ -12,13 +12,14 @@
     </div>
     <div class="row">
         <div>
-            <h4>Enheder</h4>
+            <h4 style="color:#897b7b;">Enheder</h4>
         </div>
         <div>
             <div style="display: inline-block; margin-inline-end: 25px;" v-for="item in items">
-                <div style="width: 75px!important; height: 100px!important; background-color: #e7e7e7;">
+                <div style="width:80px!important; ">
+                    <img v-bind:style="'width:100%; filter: hue-rotate(' + item.id*item.id*10/item.id + 'deg);'" src="/images/ear.png" />
                 </div>
-                <p style="text-align:center">{{item.location}}</p>
+                <p style="text-align:center; font-size:12px; font-weight: 500; margin-top:10px; color:#897b7b;">{{item.location}}</p>
             </div>
         </div>
     </div>
