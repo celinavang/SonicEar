@@ -45,6 +45,9 @@ Vue.createApp({
                     break;
 
 			} 
+        },
+        delete(itemid) {
+            axios.delete(baseurl + "/" + itemid)
         }
     }
 }).mount("#app")
