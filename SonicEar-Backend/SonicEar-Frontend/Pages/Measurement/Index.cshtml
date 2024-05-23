@@ -67,16 +67,16 @@
 <br/>
  
 <div class="container">
-    <div class="pages">
-            <button class="page-btn" v-on:click="setPage(currentPage-1)">Forrige</button>
-        <ul class="page-ul">
-                <li v-for="index in pageAmount" :key="index" class="page-link" v-on:click="setPage(index)">{{index}}</li>
-        </ul>
-        <button class="page-btn" v-on:click="setPage(currentPage+1)" >Næste</button>
-    </div>
+    <div style="width:150px; margin-left:auto; margin-right:auto;">
+            <button class="page-btn" v-on:click="setPage(currentPage-1)"><img src="~/images/left.png" style="width:40px;" /></button>
+            @*  <ul class="page-ul">
+            <li v-for="index in pageAmount" :key="index" class="page-link" v-on:click="setPage(index)">{{index}}</li>
+            </ul> *@
+            <button class="page-btn" v-on:click="setPage(currentPage+1)"><img src="~/images/right.png" style="width:40px;" /></button>
+        </div>
 </div> 
 
-{{currentPage}}
+
 </div>
 
  @* <script>

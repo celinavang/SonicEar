@@ -12,7 +12,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonicEar-Frontend", "SonicE
 		{F1893CEC-BF13-42D4-91DF-168EB1FCDD11} = {F1893CEC-BF13-42D4-91DF-168EB1FCDD11}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SonicEarUITest", "SonicEarUITest\SonicEarUITest.csproj", "{A49B7562-57BE-4169-8732-CB63A7130EB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonicEarUITest", "SonicEarUITest\SonicEarUITest.csproj", "{A49B7562-57BE-4169-8732-CB63A7130EB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

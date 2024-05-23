@@ -50,7 +50,7 @@ Vue.createApp({
         async deleteDevice() {
             const url = baseurl + "/" + this.item.id
             try {
-                response = await axios.delete(url)
+                const response = await axios.delete(url)
                
                
                 if (response.status == "201") {
