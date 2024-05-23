@@ -29,6 +29,7 @@
                             </th>
                             <th style="width: 100px;"></th>
                             <th style="width: 150px;"></th>
+                            <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,7 +50,11 @@
                                     <button class="btn-round btn-circle shdw"><img src="~/images/edit.png" /></button>
                                 </a>
                                 </td>
-                               
+                               <td>
+                                <a v-bind:href="'/Device/delete?id='+ item.id">
+                                    <button class="btn-round btn-circle shdw">todo</button>
+                                </a>
+                               </td>
                             </tr>
                         </tbody>
                     </table>
@@ -67,8 +72,6 @@
             <button class="page-btn" v-on:click="setPage(currentPage+1)"><img src="~/images/right.png" style="width:40px;" /></button>
         </div>
     </div>
-
-
 </div>
 
     <script src="~/js/devices.js"></script>
