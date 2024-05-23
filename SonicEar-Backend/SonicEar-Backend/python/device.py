@@ -12,7 +12,7 @@ thirdparty_url = "http://worldtimeapi.org/api/timezone/Europe/Copenhagen"
 
 headers =  {"Content-Type":"application/json"}
 device_id = 1
-lastsend = 1;
+lastsend = 1
 
 p = pyaudio.PyAudio()
 WIDTH = 2
@@ -65,10 +65,10 @@ def send():
     getRef = checkNumber(lastsend)
     screen.fill(getRef["color"])
     # check there is any noise
-    if (number > 5):
+    if (db > 5):
         
-        if number > getRef["upper"] or number < getRef["lower"]:
-            data = {"id":0,"deviceId":device_id,"device":{"id":0,"location":"string"},"timeStamp":date["datetime"],"noiseLevel":number}
+        if db > getRef["upper"] or db < getRef["lower"]:
+            data = {"id":0,"deviceId":device_id,"device":{"id":0,"location":"string"},"timeStamp":date["datetime"],"noiseLevel":db}
             response = requests.post(api_url, data=json.dumps(data), headers=headers)
             lastsend = number
             response.status_code
