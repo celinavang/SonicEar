@@ -9,7 +9,7 @@ Vue.createApp({
             searchQuery: "",
             filteredItems: [],
             pageAmount: null,
-            rowsPerPage: 1,
+            rowsPerPage: 10,
             currentPage: 1
         }
     },

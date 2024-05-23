@@ -45,7 +45,7 @@
                                 {{item.id}}
                             </td>
                             <td>
-                                {{item.device.location}}
+                                <a style="color:black; text-decoration: none; font-weight:450;"v-bind:href="'/device/details?id='+item.device.id"> {{item.device.location}} </a>
                             </td>
                             <td>
                                 {{item.timeStamp}}
