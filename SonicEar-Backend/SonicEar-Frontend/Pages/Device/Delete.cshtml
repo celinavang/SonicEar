@@ -10,21 +10,22 @@
     <div class="infobox green" v-if="confirmationmessage">
         {{confirmationmessage}}
     </div>
-    <h3>
+    <div v-if="!confirmationmessage" class="infobox">
         Er du sikker på, at du vil slette denne enhed?
-    </h3>
+    </div>
     <h4>
         Enheds Id: {{item.id}}
     </h4>
     <p>
         Lokation: {{item.location}}
     </p>
-    <div>
-        <button v-on:click="deleteDevice()">Ja</button>
+    <div v-if="deviceDeleted">
+        <button class="btn-form green" v-on:click="deleteDevice()">Ja</button>
         <a v-bind:href="'/device/edit?id='+item.id">
-        <button>Nej</button>
+        <button class="btn-form red">Nej</button>
         </a>
     </div>
+    <div v-if="!deviceDeleted"><a class="btn-form" href="/device/index">Gå tilbage</a></div>
 </div>
 
 <script src="~/js/deviceedit.js"></script>

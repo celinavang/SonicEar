@@ -14,6 +14,13 @@ html {
     }
 }
 
+a {
+    text-decoration: none!important;
+    color:unset;
+    margin:0px;
+    padding:0px;
+}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -178,18 +185,22 @@ body {
     margin-bottom: 15px;
     color:white;
     font-weight:500;
+    background-color:#a8b3c4;
 }
 
 .green {
     background-color: #9bbe98!important;
+    color: white;
 }
 
 .red {
-    background-color: #c84e4e;
+    background-color: #c84e4e!important;
+    color: white;
 }
 
 .btn-form {
-    height: 40px;
+    height: 40px!important;
+    display:inline-block;
     padding-left:50px;
     padding-right:50px;
     border:none;
@@ -197,6 +208,10 @@ body {
     border-radius: 7px;
     text-transform:capitalize;
     font-weight: 500;
+    margin-inline-end: 20px;
+    color:black;
+    padding-top:7px;
+    padding-bottom:7px;
 }
 
 .group-form{
@@ -220,7 +235,7 @@ body {
     margin-bottom: 10px;
 }
 
-<<<<<<< Updated upstream
+
 
 /*todo*/
 .search {

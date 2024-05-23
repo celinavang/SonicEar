@@ -19,7 +19,11 @@ Vue.createApp({
                 if (response.status == "201") {
                     this.confirmationmessage = 'Enheden er blevet oprettet.'
                     this.errormessage = null
+                    
                 }
+                this.location = ''
+                this.document.getElementById('locationInput').reset();
+                
             } catch (ex) {
                 console.log(ex.response)
                 this.confirmationmessage = null

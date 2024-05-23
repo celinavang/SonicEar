@@ -6,8 +6,9 @@ Vue.createApp({
             item: null,
             errormessage: null,
             confirmationmessage: null,
+            deviceDeleted: "False",
             id: null,
-
+            
             
         }
     },
@@ -54,10 +55,10 @@ Vue.createApp({
 
                console.log(response.status)
 
-               
                 if (response.status == "200") {
                     this.confirmationmessage = 'Enheden er blevet slettet.'
                     this.errormessage = null
+                    this.deviceDeleted = null
                 }
             }
             catch (ex) {
