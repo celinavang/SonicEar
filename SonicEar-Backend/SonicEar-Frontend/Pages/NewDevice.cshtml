@@ -5,12 +5,13 @@
 
 <div id="app">
     <div v-if="confirmationmessage" class="infobox green">{{confirmationmessage}}</div>
-    <h1>Create new device</h1>
+    <div v-if="confirmationmessage" class="infobox red">{{errormessage}}</div>
+    <h1>Opret enhed</h1>
     <form>
-        <label for="location">Location</label>
-        <input v-model="location" />
+        <label for="location">Enhedens lokation</label>
+        <input class="txt-input" v-model="location" />
     </form>
-    <button v-on:click="createNewDevice()">Create</button>
+    <button class="btn-form" v-on:click="createNewDevice()">Opret</button>
     <p v-if="response">{{ response }}</p>
 </div>
 
