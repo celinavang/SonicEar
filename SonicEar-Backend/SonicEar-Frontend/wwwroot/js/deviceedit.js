@@ -7,6 +7,8 @@ Vue.createApp({
             errormessage: null,
             confirmationmessage: null,
             id: null,
+
+            
         }
     },
     created() {
@@ -44,6 +46,22 @@ Vue.createApp({
                 this.errormessage = ex.response.data
             }
             
+        },
+        async deleteDevice() {
+            const url = baseurl + "/" + this.item.id
+            try {
+                response = await axios.delete(url)
+               
+               
+                if (response.status == "201") {
+                    this.confirmationmessage = 'Enheden er blevet slettet.'
+                    this.errormessage = null
+                }
+            }
+            catch (ex) {
+                this.confirmationmessage = null
+                this.errormessage = ex.response.data
+            }
         },
     }
 }).mount("#app")

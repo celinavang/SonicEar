@@ -1,0 +1,30 @@
+﻿@page
+@model SonicEar_Frontend.Pages.Device.DeleteModel
+@{
+}
+<div id="app">
+
+    <div class="infobox red" v-if="errormessage">
+        {{errormessage}}
+    </div>
+    <div class="infobox green" v-if="confirmationmessage">
+        {{confirmationmessage}}
+    </div>
+    <h3>
+        Er du sikker på, at du vil slette denne enhed?
+    </h3>
+    <h4>
+        Enheds Id: {{item.id}}
+    </h4>
+    <p>
+        Lokation: {{item.location}}
+    </p>
+    <div>
+        <button v-on:click="deleteDevice()">Ja</button>
+        <a v-bind:href="'/device/edit?id='+item.id">
+        <button>Nej</button>
+        </a>
+    </div>
+</div>
+
+<script src="~/js/deviceedit.js"></script>

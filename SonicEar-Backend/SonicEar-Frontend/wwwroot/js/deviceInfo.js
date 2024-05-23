@@ -7,11 +7,17 @@ Vue.createApp({
             item: null,
             measurements: [],
             errormessage: null,
-            id: null
+            id: null,
+            pageAmount: null,
+            rowsPerPage: 10,
+            currentPage: 1
+            
         }
     },
-    created() {
-        this.getItems()
+    async created() {
+        await this.getItems();
+        this.pageAmount = Math.ceil(this.items.length / this.rowsPerPage)
+        await this.DisplayList()
     },
     methods: {
         async getItems() {
@@ -29,6 +35,21 @@ Vue.createApp({
             } catch (ex) {
                 this.errormessage = ex.message
             }
+        },
+        async DisplayList() {
+            let page = this.currentPage - 1;
+            let start = this.rowsPerPage * page;
+            let end = start + this.rowsPerPage;
+            let paginatedItems = this.items.slice(start, end);
+            this.filteredItems = paginatedItems
+
+        },
+
+        setPage(number) {
+            if (number < 1) number = 1;
+            if (number > this.pageAmount) number = this.pageAmount;
+            this.currentPage = number;
+            this.DisplayList();
         }
     }
 }).mount("#app")
