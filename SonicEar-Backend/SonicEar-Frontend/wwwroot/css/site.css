@@ -237,16 +237,7 @@ body {
 =======
 
 
-.sort-link {
-    color: white;
-    text-decoration: none;
-    font-weight: 400;
-}
 
-.sort-link:hover {
-    color: #193172;
-    
-}
 >>>>>>> Stashed changes
 
 .container {
@@ -303,3 +294,13 @@ body {
     border: none;
     cursor: pointer; 
 }
+
+.sort-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.sort-link:hover {
+        color: #193172;
+ }
