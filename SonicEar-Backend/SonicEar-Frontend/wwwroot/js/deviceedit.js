@@ -51,9 +51,11 @@ Vue.createApp({
             const url = baseurl + "/" + this.item.id
             try {
                 const response = await axios.delete(url)
+
+               console.log(response.status)
+
                
-               
-                if (response.status == "201") {
+                if (response.status == "200") {
                     this.confirmationmessage = 'Enheden er blevet slettet.'
                     this.errormessage = null
                 }
