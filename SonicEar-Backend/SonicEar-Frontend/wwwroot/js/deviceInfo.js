@@ -6,17 +6,18 @@ Vue.createApp({
         return {
             item: null,
             measurements: [],
+            paginatedItems: [],
             errormessage: null,
             id: null,
             pageAmount: null,
-            rowsPerPage: 10,
+            rowsPerPage: 6,
             currentPage: 1
             
         }
     },
     async created() {
         await this.getItems();
-        this.pageAmount = Math.ceil(this.items.length / this.rowsPerPage)
+        this.pageAmount = Math.ceil(this.measurements.length / this.rowsPerPage)
         await this.DisplayList()
     },
     methods: {
@@ -40,8 +41,7 @@ Vue.createApp({
             let page = this.currentPage - 1;
             let start = this.rowsPerPage * page;
             let end = start + this.rowsPerPage;
-            let paginatedItems = this.items.slice(start, end);
-            this.filteredItems = paginatedItems
+            this.paginatedItems = this.measurements.slice(start, end);
 
         },
 
