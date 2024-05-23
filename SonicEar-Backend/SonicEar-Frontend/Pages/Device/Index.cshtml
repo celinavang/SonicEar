@@ -28,8 +28,8 @@
                                 <a class="sort-link" v-bind:href="'/Device' + setSort('location')">Placering</a>
                             </th>
                             <th style="width: 100px;"></th>
+                            <th style="width: 100px;"></th>
                             <th style="width: 150px;"></th>
-                            <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,7 +52,7 @@
                                 </td>
                                <td>
                                 <a v-bind:href="'/Device/delete?id='+ item.id">
-                                    <button class="btn-round btn-circle shdw">todo</button>
+                                    <button class="btn-round btn-circle shdw"><img src="~/images/delete.png" /></button>
                                 </a>
                                </td>
                             </tr>
