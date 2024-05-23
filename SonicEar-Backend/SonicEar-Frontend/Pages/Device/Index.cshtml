@@ -7,9 +7,15 @@
         <div>
             <div class="row">
                 <div>
+               
                 <h3 class="table-header">
                         Enheder
                     </h3>
+                <div style="float:right; margin-top:-30px;">
+                <a href="/Device/Create">
+                    <button style="border:none; background-color:white;"><img src="~/images/add.png" style="width:40px;" /></button>
+                </a>
+            </div>
                     <!--Søgefelt for enheder-->
                     <div class="search-div">
                         <div>
@@ -18,6 +24,7 @@
                         </div>
 
                     </div>
+
                 <table class="full-table shdw">
                         <thead>
                             <tr>
@@ -40,6 +47,7 @@
                                 <td>
                                     {{item.location}}
                                 </td>
+                            
                                 <td>
                                 <a v-bind:href="'/Device/Details?id='+ item.id">
                                     <button class="btn-round btn-circle shdw"><img src="~/images/arrow.png"/></button>
