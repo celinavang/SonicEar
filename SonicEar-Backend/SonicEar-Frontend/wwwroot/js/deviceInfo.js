@@ -17,6 +17,7 @@ Vue.createApp({
     },
     async created() {
         await this.getItems();
+        await this.getMeasurements();
         if (this.measurements.length > 0) {
             this.pageAmount = Math.ceil(this.measurements.length / this.rowsPerPage)
             await this.DisplayList()
@@ -30,12 +31,22 @@ Vue.createApp({
                 this.id = urlParams.get('id')
 
                 const response = await axios.get(baseurl + urlParams.get('id'))
-                const measurementresponse = await axios.get(measurementurl + this.id)
-
-                this.item = await response.data
-                this.measurements = await measurementresponse.data
                 
 
+               
+                this.item = await response.data
+                
+
+            } catch (ex) {
+                this.errormessage = ex.message
+            }
+        },
+        async getMeasurements() {
+            try {
+                const urlParams = new URLSearchParams(location.search)
+                this.id = urlParams.get('id')
+                const measurementresponse = await axios.get(measurementurl + urlParams.get('id'))
+                this.measurements = await measurementresponse.data
             } catch (ex) {
                 this.errormessage = ex.message
             }
