@@ -54,20 +54,28 @@ Vue.createApp({
             this.currentPage = number;
             this.DisplayList();
         },
-         getColor(level) {
-            if (level < 10) {
-                return '#99c0d1'
-            } else if (level < 20) {
-                return '#70a18b'
-            } else if (level < 30) {
-                return '#9db17e'
-            } else if (level < 40) {
-                return '#f0c581'
-            } else if (level < 50) {
-                return '#dc8c5b'
+        getColor(level) {
+            if (level < 30) {
+                return '#77c0e0'
+            } else if (level < 0) {
+                return '#3fa5b1'
             } else if (level < 60) {
-                return '#d87855'
-            } else { return '#c94b3a' }
+                return '#54a383'
+            } else if (level < 75) {
+                return '#66a15d'
+            } else if (level < 80) {
+                return '#9bbb66'
+            } else if (level < 90) {
+                return '#ffc454'
+            } else if (level < 100) {
+                return '#f8ad3a'
+            } else if (level < 115) {
+                return '#e77f38'
+            } else if (level < 130) {
+                return '#e2682d'
+            } else {
+                return '#d95139'
+            }
         },
     }
 }).mount("#app")

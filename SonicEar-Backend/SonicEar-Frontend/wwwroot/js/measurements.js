@@ -65,9 +65,9 @@ Vue.createApp({
             this.getItems();
         },
         getColor(level) {
-            if (level < 20) {
-                return '#29a8df'
-            } else if (level < 40) {
+            if (level < 30) {
+                return '#77c0e0'
+            } else if (level < 0) {
                 return '#3fa5b1'
             } else if (level < 60) {
                 return '#54a383'
