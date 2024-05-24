@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace SonicEar_Frontend.Pages
+namespace SonicEar_Frontend.Pages.Device
 {
-    public class measurementsModel : PageModel
+    public class CreateModel : PageModel
     {
         public void OnGet()
         {

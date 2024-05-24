@@ -1,52 +1,55 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SonicEar_Frontend</title>
+    <title>@ViewData["Title"]SonicEar</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/SonicEar_Frontend.styles.css" asp-append-version="true" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body style="background-color:#acc2e4!important;">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-white border-bottom box-shadow mb-3" style="background-color:#acc2e4!important;">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index"><img style="width: 150px;" src="/images/logo.png"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+        <nav class="top-navbar navbar navbar-expand-sm navbar-toggleable-sm mb-3" style="background-color:#acc2e4!important; width:100%!important;">
+            <div class="container" style="padding:0px!important; margin: 0px!important; width:80%!important; max-width:unset!important;">
+                <a class="navbar-brand" asp-area="" asp-page="/Index"><img style="width: 200px; margin-right:-125px;" src="/images/logo2.png"></a>
+                <button class="navbar-toggler nav-button" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon">menu</span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" >
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Hjem</a>
+                            <div class="nav-button @(Accessor.HttpContext.Request.Path.Value == "/Device" ? "nav-button-active" : "")" style="margin-right: 15px;">
+                                <a class="" asp-area="" asp-page="/Device/Index"><img src=" @(Accessor.HttpContext.Request.Path.Value == "/Device" ? "/images/device-active.png" : "/images/device-inactive.png")" /> <p>Enheder</p></a>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Devices">Enheder</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Measurements">Målinger</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <div class="nav-button @(Accessor.HttpContext.Request.Path.Value == "/Measurement" ? "nav-button-active" : "" )">
+                                <a class="" asp-area="" asp-page="/Measurement/Index"><img src="@(Accessor.HttpContext.Request.Path.Value == "/Measurement" ? "/images/folder-active.png" : "/images/folder-inactive.png")" /> <p>Målinger</p></a>
+                            </div>
                         </li>
                     </ul>
-                    <partial name="_LoginPartial" />
+                    <div><partial name="_LoginPartial" /></div>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="main-container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-muted">
         <div class="container">
             Footer
         </div>

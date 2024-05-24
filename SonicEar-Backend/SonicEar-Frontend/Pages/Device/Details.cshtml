@@ -1,0 +1,66 @@
+﻿@page
+@model SonicEar_Frontend.Pages.Device.DetailsModel
+@{
+}
+<div id="app">
+    <div class="group-form">
+        <div style="float:right;">
+            <a v-bind:href="'/Device/Edit?id=' + item.id">
+                <button class="btn-round btn-circle shdw" style="margin-right:10px;">
+                    <img src="/images/edit.png">
+                </button>
+            </a>
+        </div>
+        <div>
+            <h3>Enheds ID: {{item.id}}</h3>
+            <h4>Location: {{item.location}}</h4>
+        </div>
+    </div>
+    
+
+    <div>
+        <div class="row">
+            <div v-if="measurements">
+                <br />
+                <h3 class="table-header">
+                    Målinger
+                </h3>
+                <table class="full-table shdw">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Tidspunkt</th>
+                            <th>Måling</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in paginatedItems">
+                            <td>
+                                {{item.id}}
+                            </td>
+                            <td>
+                                {{item.timeStamp}}
+                            </td>
+                            <td>
+                                {{item.noiseLevel}}
+                            </td>
+                            <td>
+                                <div v-bind:style="'background-color:' + getColor(item.noiseLevel)" class="level"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container" v-if="measurements">
+        <div style="width:150px; margin-left:auto; margin-right:auto; margin-top:30px">
+            <button class="page-btn" v-on:click="setPage(currentPage-1)"><img src="~/images/pagearrow.png" style="width:60px; transform:rotate(180deg);" /></button>
+            <button class="page-btn" v-on:click="setPage(currentPage+1)"><img src="~/images/pagearrow.png" style="width:60px;" /></button>
+        </div>
+    </div>
+</div>
+<script src="~/js/deviceInfo.js"></script>

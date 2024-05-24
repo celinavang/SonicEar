@@ -1,11 +1,24 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
+
 
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
+    .main-container, .top-navbar {
+        margin-right: 10%!important;
+        margin-left: 10%!important;
+        width: 80%!important;
+    }
+}
+
+a {
+    text-decoration: none!important;
+    color:unset;
+    margin:0px;
+    padding:0px;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -18,5 +31,325 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: "Fredoka", sans-serif !important;
 }
+
+
+.main-container, .top-navbar {
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
+
+.main-container {
+    background-color: #ffffff;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+.top-navbar {
+    height: 100px;
+    border-radius: 10px;
+}
+
+.top-navbar a{
+    text-decoration:none;
+}
+
+.nav-button {
+    background-color: white;
+    height: 50px !important;
+    border-radius: 25px;
+    min-width: 50px !important;
+    width: 50px;
+    padding-left: 15px;
+    padding-top: 11px;
+    padding-right: 15px;
+    transition: 0.5s;
+}
+
+    .nav-button p {
+        display: none;
+        padding: 10px;
+        color: white;
+        transition: 0.3s;
+    }
+    .nav-button img {
+        width: 20px;
+        margin: 0px !important;
+        transition: 0.3s;
+    }
+
+    .nav-button:has(:hover) {
+        transform: scale(1.05);
+        transition: 0.5s;
+        width: auto;
+        padding-left: 20px !important;
+    }
+
+        .nav-button:has(:hover) p {
+            display: initial;
+            color: #00000050;
+            transition: 0.5s;
+        }
+
+        .nav-button-active:has(:hover) p {
+            display: initial;
+            color: black;
+            transition: 0.5s;
+        }
+
+.nav-button:has(:hover) img {
+    transform: scale(1.1);
+}
+
+.nav-button-active {
+    width: auto;
+    padding-left: 20px!important;
+}
+
+    .nav-button-active p {
+        display: initial;
+        color:black;
+
+    }
+
+.table-header {
+    font-family: "Fredoka", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #4a4d57;
+    margin-bottom: 25px;
+    
+}
+
+
+.full-table {
+    margin:0px!important;
+    width:100%;
+    border-radius: 3px;
+    background-color: #ffffff;
+    font-family: "Fredoka", sans-serif;
+    overflow:hidden;
+    
+}
+
+    .full-table th, td {
+        padding: 20px 30px 20px 30px;
+        
+    }
+
+    .full-table th {
+        background-color: #acc2e4;
+        font-weight: 500;
+    }
+
+    tr:nth-child(even){
+    background-color: #acc2e433 !important;
+    
+    }
+
+
+
+.btn-round {
+    border-radius: 23px;
+    border: none;
+    background-color: #f5f5f5;
+    height: 46px;
+    width: auto;
+    padding: 0px 15px;
+    font-family: "Fredoka", sans-serif!important;
+}
+
+    .btn-circle {
+        width: 46px!important;
+        padding:6px;
+
+    }
+
+    .btn-circle img {
+        width:24px;
+        margin-left:auto;
+        margin-right:auto;
+        padding:0px;
+    }
+
+.shdw {
+    box-shadow: #13153031 0px 0px 6px 2px;
+}
+
+
+.infobox {
+    padding: 20px;
+    border-radius:5px;
+    margin-bottom: 15px;
+    color:white;
+    font-weight:500;
+    background-color:#a8b3c4;
+}
+
+.green {
+    background-color: #9bbe98!important;
+    color: white;
+}
+
+.red {
+    background-color: #c84e4e!important;
+    color: white;
+}
+
+.btn-form {
+    height: 40px!important;
+    display:inline-block;
+    padding-left:50px;
+    padding-right:50px;
+    border:none;
+    background-color: #acc2e4;
+    border-radius: 7px;
+    text-transform:capitalize;
+    font-weight: 500;
+    margin-inline-end: 20px;
+    color:black;
+    padding-top:7px;
+    padding-bottom:7px;
+    
+}
+
+.group-form{
+    display:block;
+    width: 100%;
+    height:auto;
+    margin-bottom:10px;
+}
+
+.txt-input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #eaeaea;
+    border-radius: 7px;
+    box-shadow: rgba(0,0,0,0.1) 0px 0px 3px 2px inset;
+    padding-left: 15px;
+    padding-right: 15pc;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/*todo*/
+.search {
+    background-color: pink;
+}
+
+.level{
+    width: 40px;
+    height: 10px;
+    border-radius: 5px;
+
+}
+
+=======
+
+
+
+>>>>>>> Stashed changes
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, #410358, #4700bc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pages {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    color: #383838;
+    padding: 10px 40px;
+    border-radius: 6px
+
+}
+.page-ul{
+    margin: 20px 30px;
+}
+    .page-ul .page-link {
+        display: inline-block;
+        margin: 0 10px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 2px;
+        font-weight: 500;
+        line-height: 45px;
+        cursor: pointer;
+        background-position: 0 -45px;
+        transition: background-position 0.5s;
+    }
+    .page-ul li.active {
+        color: #fff;
+        background-image: linear-gradient(#ff4568, #ff4568);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+    }
+
+.page-btn{
+    display: inline-flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 500; 
+    color: #383838;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer; 
+}
+
+.sort-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.sort-link:hover {
+        color: #193172;
+ }
+.device-icon {
+    width: 90px;
+    display:inline-block;
+    margin-top:10px;
+}
+
+.device-icon:hover {
+    transform:scale(1.1);
+    transition:0.5s;
+}
+
+.device-icon img {
+    width: 100%;
+}
+::-webkit-scrollbar {
+    height: 4px;
+    
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #dddddd;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #cfcfcf;
+    }

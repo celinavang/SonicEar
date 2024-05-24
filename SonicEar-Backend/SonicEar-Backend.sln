@@ -12,6 +12,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonicEar-Frontend", "SonicE
 		{F1893CEC-BF13-42D4-91DF-168EB1FCDD11} = {F1893CEC-BF13-42D4-91DF-168EB1FCDD11}
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonicEarUITest", "SonicEarUITest\SonicEarUITest.csproj", "{A49B7562-57BE-4169-8732-CB63A7130EB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{ED04ACF8-E91C-4CF2-96E1-9720A1193577}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED04ACF8-E91C-4CF2-96E1-9720A1193577}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED04ACF8-E91C-4CF2-96E1-9720A1193577}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A49B7562-57BE-4169-8732-CB63A7130EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A49B7562-57BE-4169-8732-CB63A7130EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A49B7562-57BE-4169-8732-CB63A7130EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A49B7562-57BE-4169-8732-CB63A7130EB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

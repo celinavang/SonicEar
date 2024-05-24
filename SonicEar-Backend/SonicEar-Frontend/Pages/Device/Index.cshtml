@@ -1,0 +1,82 @@
+﻿@page
+@model DevicesModel
+@{
+}
+ <div id="app">
+        {{errormessage}} 
+        <div>
+            <div class="row">
+                <div>
+               
+                <h3 class="table-header">
+                        Enheder
+                    </h3>
+                <div style="float:right; margin-top:-30px;">
+                <a href="/Device/Create">
+                        <button class="btn-round shdw" style="background-color:#acc2e433;">Opret enhed <img src="~/images/addicon.png" style="width:24px; margin-left:10px;" /></button>
+                </a>
+            </div>
+                    <!--Søgefelt for enheder-->
+                    <div class="search-div">
+                        <div>
+                            <input v-model="searchQuery" type="text" placeholder="Søg her:" />
+                            <button class="search-button" v-on:click="search">Søg</button>
+                        </div>
+
+                    </div>
+
+                <table class="full-table shdw">
+                        <thead>
+                            <tr>
+                            <th style="width: 50px;">
+                                <a class="sort-link"  v-bind:href="'/Device' + setSort('id')">#</a>
+                            </th>
+                            <th>
+                                <a class="sort-link" v-bind:href="'/Device' + setSort('location')">Placering</a>
+                            </th>
+                            <th style="width: 100px;"></th>
+                            <th style="width: 100px;"></th>
+                            <th style="width: 150px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in filteredItems" key="item.id">
+                                <td>
+                                    {{item.id}}
+                                </td>
+                                <td>
+                                    {{item.location}}
+                                </td>
+                            
+                                <td>
+                                <a v-bind:href="'/Device/Details?id='+ item.id">
+                                    <button class="btn-round btn-circle shdw"><img src="~/images/arrow.png"/></button>
+                                </a>
+                                </td>
+                            <td>
+                                <a v-bind:href="'/Device/edit?id='+ item.id">
+                                    <button class="btn-round btn-circle shdw"><img src="~/images/edit.png" /></button>
+                                </a>
+                                </td>
+                               <td>
+                                <a v-bind:href="'/Device/delete?id='+ item.id">
+                                    <button class="btn-round btn-circle shdw"><img src="~/images/delete.png" /></button>
+                                </a>
+                               </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+               
+            </div>
+        </div>
+
+    <div class="container">
+        <div style="width:150px; margin-left:auto; margin-right:auto; margin-top:30px">
+            <button class="page-btn" v-on:click="setPage(currentPage-1)"><img src="~/images/pagearrow.png" style="width:60px; transform:rotate(180deg);" /></button>
+            <button class="page-btn" v-on:click="setPage(currentPage+1)"><img src="~/images/pagearrow.png" style="width:60px;" /></button>
+        </div>
+    </div>
+</div>
+
+    <script src="~/js/devices.js"></script>

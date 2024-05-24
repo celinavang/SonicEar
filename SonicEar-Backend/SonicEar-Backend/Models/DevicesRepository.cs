@@ -5,6 +5,10 @@ namespace SonicEar_Backend.Models
 {
     public class DevicesRepository : IDevicesRepository
     {
+        private static readonly List<Device> Data = new()
+        {
+
+        };
         
         // Vi opretter en liste af devices 
         // private readonly List<Device> _devices;
@@ -28,10 +32,33 @@ namespace SonicEar_Backend.Models
         }
 
         // GetAll metode, der returnerer listen af devices
-        public List<Device> GetAll()
+        public List<Device> GetAll(string? sortBy)
         {
-            return new List<Device>(_context.Devices);
+            List<Device> devices = new(_context.Devices);
+
+            if (sortBy != null)
+            {
+                switch (sortBy.ToLower())
+                {
+                    default:
+                        break;
+                    case "id_desc":
+                        devices = devices.OrderByDescending(d => d.Id).ToList();
+                        break;
+                    case "location_desc":
+                        devices = devices.OrderByDescending(d => d.Location).ToList();
+                        break;
+                    case "location_asc":
+                        devices = devices.OrderBy(d => d.Location).ToList();
+                        break;
+                   
+
+                }
+            }
+            return devices;
+            
         }
+
 
         // GetById metode, der returnerer et device ud fra et id
         public Device? GetById(int id)

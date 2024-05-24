@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SonicEar_Backend.Interfaces;
 using SonicEar_Backend.Models;
+using System.Reflection.Metadata.Ecma335;
 
 namespace SonicEar_Backend.Controllers
 {
@@ -18,10 +19,11 @@ namespace SonicEar_Backend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet]
-        public ActionResult<IEnumerable<Device>> Get()
+        public ActionResult<IEnumerable<Device>> Get([FromQuery] string? sortBy)
         {
-            IEnumerable<Device> result = _devicesRepository.GetAll();
-            if(result.Any())
+            
+            IEnumerable<Device> result = _devicesRepository.GetAll(sortBy);
+            if (result.Any())
             {
                 return Ok(result);
             }
@@ -29,7 +31,9 @@ namespace SonicEar_Backend.Controllers
             {
                 return NoContent();
             }
+
         }
+
 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -56,14 +60,14 @@ namespace SonicEar_Backend.Controllers
             }
             catch (ArgumentNullException ex)  
             {
-                return BadRequest(ex.Message);
+                return BadRequest("Indtast venligst en lokation");
             }
         }
 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [HttpPut]
+        [HttpPut("{id}")]
         public ActionResult<Device> Put(int id, [FromBody] Device device)
         {
             try
@@ -72,10 +76,10 @@ namespace SonicEar_Backend.Controllers
                 if (updatedDevice == null) return NotFound();
                 else return Ok(updatedDevice);
             }
-            catch (ArgumentNullException ex)
+            catch (Exception ex) when (ex is ArgumentNullException || ex is ArgumentOutOfRangeException)
             {
-                return BadRequest(ex.Message);
-            }
+                return BadRequest("Placering skal være på mindst 1 tegn");
+            } 
         }
 
         [ProducesResponseType(StatusCodes.Status201Created)]
