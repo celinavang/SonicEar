@@ -353,3 +353,32 @@ body {
     ::-webkit-scrollbar-thumb:hover {
         background: #cfcfcf;
     }
+
+.subheader {
+    color:#897b7b;
+}
+
+.dbDisplay {
+    height: 75px;
+    width:55px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:10px;
+    border-radius: 5px;
+}
+
+.dbContainer {
+    width:80px;
+    text-align:center;
+    margin-inline:auto;
+}
+
+.dbContainer p {
+    margin-inline:auto;
+    margin-block:0px;
+}
+
+.dbContainer:hover {
+    transform: scale(1.1) rotate(5deg); 
+    transition:.5s;
+}
