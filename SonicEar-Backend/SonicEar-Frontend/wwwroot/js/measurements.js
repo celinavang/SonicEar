@@ -18,7 +18,6 @@ Vue.createApp({
         this.pageAmount = Math.ceil(this.items.length / this.rowsPerPage)
         await this.DisplayList()
         
-
     },
     methods: {
         async getItems() {
