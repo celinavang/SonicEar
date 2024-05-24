@@ -30,6 +30,8 @@ Vue.createApp({
                     this.currentSort = urlParems.get('sortBy')
                     console.log(urlParems.get('sortBy'))
                     response = await axios.get(baseurl + '?sortBy=' + this.currentSort)
+                } else {
+                    response = await axios.get(baseurl)
                 }
 
                 this.items = await response.data;
@@ -61,8 +63,6 @@ Vue.createApp({
                 default:
                     break;
             }
-            this.currentSort = sortParam;
-            this.getItems();
         },
         getColor(level) {
             if (level < 30) {
