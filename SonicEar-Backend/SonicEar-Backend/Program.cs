@@ -1,12 +1,13 @@
-using SonicEar_Backend.Data;
 using Microsoft.EntityFrameworkCore;
+using SonicEar_Backend.Data;
 using SonicEar_Backend.Interfaces;
 using SonicEar_Backend.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddCors(options => {
+builder.Services.AddCors(options =>
+{
     options.AddPolicy(name: "AllowAll", policy =>
     {
         policy.AllowAnyOrigin()
