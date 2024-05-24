@@ -73,7 +73,13 @@ Vue.createApp({
             if (number > this.pageAmount) number = this.pageAmount;
             this.currentPage = number;
             this.DisplayList();
-        }
+        },
+        
 
-    }
+    },
+    computed: {
+        top10() {
+            return this.items.slice(1, 10)
+        }
+    },
 }).mount("#app")

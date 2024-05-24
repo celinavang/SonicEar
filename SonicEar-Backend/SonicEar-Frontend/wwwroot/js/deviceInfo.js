@@ -17,8 +17,11 @@ Vue.createApp({
     },
     async created() {
         await this.getItems();
-        this.pageAmount = Math.ceil(this.measurements.length / this.rowsPerPage)
-        await this.DisplayList()
+        if (this.measurements.length > 0) {
+            this.pageAmount = Math.ceil(this.measurements.length / this.rowsPerPage)
+            await this.DisplayList()
+        }
+        
     },
     methods: {
         async getItems() {

@@ -14,12 +14,16 @@
         <div>
             <h4 style="color:#897b7b;">Enheder</h4>
         </div>
-        <div>
-            <div style="display: inline-block; margin-inline-end: 25px;" v-for="item in items">
-                <div style="width:80px!important; ">
-                    <img v-bind:style="'width:100%; filter: hue-rotate(' + item.id*item.id*10/item.id + 'deg);'" src="/images/ear.png" />
-                </div>
-                <p style="text-align:center; font-size:12px; font-weight: 500; margin-top:10px; color:#897b7b;">{{item.location}}</p>
+        <div style="width:100%; margin-left:auto;margin-right:auto; height: 160px; overflow:auto; white-space: nowrap;">
+            
+            <div  style="display: inline-block; margin-inline:10px;" v-for="item in items.slice(0,14)">
+                <a v-bind:href="'/device/details?id=' + item.id">
+                    <div class="device-icon">
+                    <img v-bind:style="'filter: hue-rotate(' + item.id*item.id*12/item.id + 'deg);'" src="/images/ear.png" />
+                
+                <p style="text-align:center; font-size:12px; font-weight: 500; margin-top:12px; color:#897b7b;">{{item.location}}</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
