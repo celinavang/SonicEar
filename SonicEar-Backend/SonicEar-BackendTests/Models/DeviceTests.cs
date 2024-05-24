@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SonicEar_Backend.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SonicEar_Backend.Models.Tests
 {
@@ -12,7 +6,7 @@ namespace SonicEar_Backend.Models.Tests
     public class DeviceTests
     {
         private readonly Device _d1 = new() { Id = 1, Location = "TestLocation" };
-        private readonly Device _d2 = new() { Id = 1, Location = null};
+        private readonly Device _d2 = new() { Id = 1, Location = null };
         private readonly Device _d3 = new() { Id = 1, Location = "" };
 
 
@@ -27,7 +21,7 @@ namespace SonicEar_Backend.Models.Tests
 
             // Assert
             Assert.AreEqual(expected, actual);
-         
+
         }
 
 

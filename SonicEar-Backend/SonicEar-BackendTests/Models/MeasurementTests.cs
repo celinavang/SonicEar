@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SonicEar_Backend.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SonicEar_Backend.Classes.Tests
 {
@@ -22,13 +16,13 @@ namespace SonicEar_Backend.Classes.Tests
         [TestMethod()]
         public void VerifyNoiseLevelTest()
         {
-           _m1.VerifyNoiseLevel();
-           Assert.ThrowsException<ArgumentOutOfRangeException>(() => _m3.VerifyNoiseLevel());
-           Assert.ThrowsException<ArgumentOutOfRangeException>(() => _m4.VerifyNoiseLevel());
+            _m1.VerifyNoiseLevel();
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _m3.VerifyNoiseLevel());
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _m4.VerifyNoiseLevel());
 
         }
 
-    
+
 
         [TestMethod()]
         public void VerifyTest()

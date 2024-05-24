@@ -1,12 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SonicEar_Backend.Data;
 using SonicEar_Backend.Interfaces;
 using SonicEar_Backend.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SonicEar_BackendTests.Models
 {
@@ -16,7 +10,7 @@ namespace SonicEar_BackendTests.Models
         private IDevicesRepository _devicesRepository;
 
         [TestInitialize]
-        public void TestInitialize(IDevicesRepository devicesRepository) 
+        public void TestInitialize(IDevicesRepository devicesRepository)
         {
         }
 
