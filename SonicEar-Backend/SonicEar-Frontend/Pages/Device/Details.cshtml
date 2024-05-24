@@ -28,14 +28,15 @@
                 <table class="full-table shdw">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Tidspunkt</th>
-                            <th>Måling</th>
+                            <th class="sort-link">#</th>
+                            <th class="sort-link">Tidspunkt</th>
+                            <th class="sort-link">Måling</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="item in paginatedItems">
+                            
                             <td>
                                 {{item.id}}
                             </td>
