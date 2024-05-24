@@ -359,16 +359,23 @@ body {
 }
 
 .dbDisplay {
-    height: 75px;
-    width:55px;
+    min-height: 100px;
+    width:100%;
     margin-left:auto;
     margin-right:auto;
     margin-bottom:10px;
     border-radius: 5px;
 }
 
+.dbDisplay img {
+    width:80%;
+    margin-inline:10%;
+    margin-block:25px;
+}
+
 .dbContainer {
-    width:80px;
+    width:9%;
+    min-width:80px;
     text-align:center;
     margin-inline:auto;
 }
