@@ -177,6 +177,31 @@ body {
         padding:0px;
     }
 
+.btn-search {
+    height: 34px;
+    padding-inline: 15px;
+    border-radius: 7px;
+    border: none;
+    background-color: #acc2e4;
+    box-shadow: rgba(0,0,0,0.1) 0px 0px 3px 2px;
+    margin:0px!important;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+.search-input {
+    border-radius: 7px;
+    box-shadow: rgba(0,0,0,0.15) 0px 0px 3px 2px inset;
+    border: none;
+    height: 34px;
+    padding-inline: 20px;
+    padding-block: 3px;
+    margin: 0px !important;
+    margin-right: 5px !important;
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+
 .shdw {
     box-shadow: #13153031 0px 0px 6px 2px;
 }

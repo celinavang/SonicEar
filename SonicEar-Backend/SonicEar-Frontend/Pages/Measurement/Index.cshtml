@@ -14,12 +14,13 @@
                 </h3>
                 <!--Søgefelt for målinger -->
                 <div class="search-div">
-                    <div>
-                        <input v-model="searchQuery" type="text" placeholder="Søg målinger:" style="background-color: #eaeaea; border-radius: 7px;box-shadow: rgba(0,0,0,0.1) 0px 0px 3px 2px inset; margin-bottom: 5px; margin-right: 5px;" />
-                        <button class="search-button" v-on:click="search" style="background-color: #eaeaea; border-radius: 7px;box-shadow: rgba(0,0,0,0.1) 0px 0px 3px 2px inset; margin-bottom: 5px; margin-right: 5px;">Søg</button>
+                    <div style="margin-bottom:10px;">
+                        <input v-model="searchQuery" type="text" placeholder="Søg..." class="search-input"  />
+                        <button class="btn-search " v-on:click="search">
+                            <img style="width:20px; " src="/images/search.png" />
+                        </button>
                     </div>
                 </div>
-
                 <table class="full-table shdw">
                     <thead>
                         <tr>
@@ -49,14 +50,14 @@
                             <td>
                                 <a style="color:black; text-decoration: none; font-weight:450;"v-bind:href="'/device/details?id='+item.device.id"> {{item.device.location}} </a>
                             </td>
-                            <<td>
+                            <td>
                                 {{parseInt(item.timeStamp.slice(11,13))+2}}:{{item.timeStamp.slice(14,16)}}
                             </td>
                             <td>
                                 {{item.timeStamp.slice(8,10)}}/{{item.timeStamp.slice(5,7)}}/{{item.timeStamp.slice(0,4)}}
                             </td>
                             <td>
-                                {{item.noiseLevel}}
+                                {{String(item.noiseLevel).slice(0,5)}}
                             </td>
                             <td>
                                 <div v-bind:style="'background-color:' + getColor(item.noiseLevel)" class="level"></div>
