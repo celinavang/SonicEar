@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SonicEar_Backend.Classes;
 using SonicEar_Backend.Interfaces;
-using SonicEar_Backend.Models;
 
 namespace SonicEar_Backend.Controllers
 {
@@ -22,7 +21,7 @@ namespace SonicEar_Backend.Controllers
         public ActionResult<IEnumerable<Measurement>> Get([FromQuery] string? sortBy)
         {
             IEnumerable<Measurement> result = _measurementsRepository.GetAll(sortBy);
-            if(result.Any())
+            if (result.Any())
             {
                 return Ok(result);
             }
@@ -32,7 +31,7 @@ namespace SonicEar_Backend.Controllers
             }
         }
 
-       
+
 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -80,7 +79,7 @@ namespace SonicEar_Backend.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPut]
-        public ActionResult<Measurement> Put(int id, [FromBody] Measurement measurement) 
+        public ActionResult<Measurement> Put(int id, [FromBody] Measurement measurement)
         {
             try
             {
@@ -88,7 +87,7 @@ namespace SonicEar_Backend.Controllers
                 if (updatedMeasurement == null) return NotFound();
                 else return Ok(updatedMeasurement);
             }
-            catch(ArgumentOutOfRangeException ex)
+            catch (ArgumentOutOfRangeException ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -98,7 +97,7 @@ namespace SonicEar_Backend.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("{id}")]
-        public ActionResult<Measurement> Delete(int id) 
+        public ActionResult<Measurement> Delete(int id)
         {
             Measurement? deletedMeasurement = _measurementsRepository.Delete(id);
             if (deletedMeasurement == null)

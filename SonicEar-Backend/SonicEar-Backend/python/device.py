@@ -27,11 +27,11 @@ def callback(in_data, frame_count, time_info, status):
 
 
 def checkNumber(number):
-    if (number < 20): return {"upper": 20, "lower": 0, "color": "#29a8df"}
-    elif (number < 40): 
-        return {"upper": 40, "lower": 20, "color": "#3fa5b1"}
+    if (number < 30): return {"upper": 30, "lower": 0, "color": "#29a8df"}
+    elif (number < 50): 
+        return {"upper": 50, "lower": 30, "color": "#3fa5b1"}
     elif (number < 60): 
-        return {"upper": 60, "lower": 40, "color": "#54a383"}
+        return {"upper": 60, "lower": 50, "color": "#54a383"}
     elif (number < 75): 
         return {"upper": 75, "lower": 60, "color": "#66a15d"}
     elif (number < 80):

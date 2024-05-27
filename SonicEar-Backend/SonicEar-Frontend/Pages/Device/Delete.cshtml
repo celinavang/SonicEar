@@ -21,7 +21,7 @@
     </p>
     <div v-if="deviceDeleted">
         <button class="btn-form green" v-on:click="deleteDevice()">Ja</button>
-        <a v-bind:href="'/device/edit?id='+item.id">
+        <a href="/device/index">
         <button class="btn-form red">Nej</button>
         </a>
     </div>

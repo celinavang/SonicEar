@@ -54,11 +54,11 @@ Vue.createApp({
 
 			} 
         },
-        search() {
+        searchDevices() {
             const query = this.searchQuery.toLowerCase();
             this.filteredItems = this.items.filter(item =>
-                item.id.toLowerCase().includes(query) || 
-                item.location.toLowerCase().include(query)
+                item.id.toString().includes(query) || 
+                item.location.toLowerCase().includes(query)
             )
         },
         async DisplayList() {

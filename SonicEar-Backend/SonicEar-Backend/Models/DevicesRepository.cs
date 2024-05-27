@@ -9,7 +9,7 @@ namespace SonicEar_Backend.Models
         {
 
         };
-        
+
         // Vi opretter en liste af devices 
         // private readonly List<Device> _devices;
 
@@ -51,12 +51,12 @@ namespace SonicEar_Backend.Models
                     case "location_asc":
                         devices = devices.OrderBy(d => d.Location).ToList();
                         break;
-                   
+
 
                 }
             }
             return devices;
-            
+
         }
 
 
@@ -82,7 +82,7 @@ namespace SonicEar_Backend.Models
 
         // Delete metode, der sletter et device ud fra et id
         public Device Delete(int id)
-        { 
+        {
             Device? device = _context.Devices.FirstOrDefault(d => d.Id == id);
             if (device != null)
             {

@@ -3,25 +3,21 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
-<ul class="navbar-nav">
+
+<ul class="navbar-nav" style="width:200px;" id="login-navbar">
 @if (SignInManager.IsSignedIn(User))
 {
-    @* <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
-    </li> *@
-        <li class="nav-item btn-round">
-        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Log ud</button>
+        <a asp-area="Identity" asp-page="/Account/Manage/Index" class="btn-round shdw nav-button" id="profile-btn" style="margin-right:15px; margin-left:auto; padding-block: 11px; text-align:center; font-weight:600; float:right;"><p>Profil</p><span>@User.Identity.Name.ToCharArray()[0].ToString().ToUpper()</span></a>
+        <li style ="float:right; margin-right:0px;" class="nav-item ">
+        <form   asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                <button type="submit" id="login-btn"class="btn-round shdw nav-button">Log ud</button>
         </form>
     </li>
 }
 else
 {
-@*     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </li> *@
-    <li class="nav-item btn-round">
-        <a class="nav-link text-dark" asp-area="Identity" id="loginButtonId" asp-page="/Account/Login">Log ind</a>
+        <li id="login-btn"  class="btn-round shdw nav-button nav-item" style="padding-inline:15px; padding-block:12px; float:right; margin-right:0px; margin-left:auto;">
+            <a   asp-area="Identity" id="loginButtonId" asp-page="/Account/Login">Log ind</a>
     </li>
 }
 </ul>

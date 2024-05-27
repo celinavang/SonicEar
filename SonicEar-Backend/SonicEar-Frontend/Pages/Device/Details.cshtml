@@ -28,22 +28,27 @@
                 <table class="full-table shdw">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Tidspunkt</th>
-                            <th>Måling</th>
+                            <th class="sort-link">#</th>
+                            <th class="sort-link">Tidspunkt</th>
+                            <th class="sort-link">Dato</th>
+                            <th class="sort-link">Måling</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="item in paginatedItems">
+                            
                             <td>
                                 {{item.id}}
                             </td>
                             <td>
-                                {{item.timeStamp}}
+                                {{parseInt(item.timeStamp.slice(11,13))+2}}:{{item.timeStamp.slice(14,16)}}
                             </td>
                             <td>
-                                {{item.noiseLevel}}
+                                {{item.timeStamp.slice(8,10)}}/{{item.timeStamp.slice(5,7)}}/{{item.timeStamp.slice(0,4)}}
+                            </td>
+                            <td>
+                                {{String(item.noiseLevel).slice(0,5)}}
                             </td>
                             <td>
                                 <div v-bind:style="'background-color:' + getColor(item.noiseLevel)" class="level"></div>

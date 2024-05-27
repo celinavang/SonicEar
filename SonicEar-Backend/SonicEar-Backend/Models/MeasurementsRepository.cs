@@ -2,7 +2,6 @@
 using SonicEar_Backend.Classes;
 using SonicEar_Backend.Data;
 using SonicEar_Backend.Interfaces;
-using System.Globalization;
 
 namespace SonicEar_Backend.Models
 {
@@ -12,7 +11,7 @@ namespace SonicEar_Backend.Models
         //private readonly List<Measurement> _measurements;
         private readonly ApplicationDbContext _context;
         private readonly IDevicesRepository _devicesRepository;
-        public MeasurementsRepository(ApplicationDbContext context, IDevicesRepository devicesRepository) 
+        public MeasurementsRepository(ApplicationDbContext context, IDevicesRepository devicesRepository)
         {
             _context = context;
             _devicesRepository = devicesRepository;
@@ -55,22 +54,22 @@ namespace SonicEar_Backend.Models
                 }
             }
             return measurements;
-            
+
         }
 
-      
+
 
         public Measurement? GetById(int id)
         {
 
             Measurement? result = _context.Measurements.FirstOrDefault(m => m.Id == id);
             return result;
-            
+
         }
 
         public List<Measurement> GetByDevice(int deviceId)
         {
-            List<Measurement> result = new List<Measurement>( _context.Measurements.Where(m => m.DeviceId == deviceId).Include(m => m.Device).ToList());
+            List<Measurement> result = new List<Measurement>(_context.Measurements.Where(m => m.DeviceId == deviceId).Include(m => m.Device).ToList());
             return result;
 
         }
@@ -81,12 +80,12 @@ namespace SonicEar_Backend.Models
         //    return result;
         //}
 
-        public Measurement Create (Measurement measurement)
+        public Measurement Create(Measurement measurement)
         {
             measurement.Verify();
-            
+
             Device? device = _devicesRepository.GetById(measurement.DeviceId);
-            if(device != null)
+            if (device != null)
             {
                 measurement.Device = device;
                 _context.Measurements.Add(measurement);
@@ -97,7 +96,7 @@ namespace SonicEar_Backend.Models
             return measurement;
         }
 
-     
+
 
         public Measurement? Update(Measurement measurement, int id)
         {
@@ -105,7 +104,7 @@ namespace SonicEar_Backend.Models
             Measurement? measurementToUpdate = _context.Measurements.FirstOrDefault(m => m.Id == id);
             if (measurementToUpdate != null)
             {
-                
+
 
                 measurementToUpdate.DeviceId = measurement.DeviceId;
                 measurementToUpdate.TimeStamp = measurement.TimeStamp;

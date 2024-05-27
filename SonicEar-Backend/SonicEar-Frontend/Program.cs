@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SonicEar_Backend.Models;
 using SonicEar_Backend.Data;
-using Microsoft.AspNetCore.Authorization;
+using SonicEar_Backend.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

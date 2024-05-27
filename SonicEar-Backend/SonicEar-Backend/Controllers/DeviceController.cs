@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SonicEar_Backend.Interfaces;
 using SonicEar_Backend.Models;
-using System.Reflection.Metadata.Ecma335;
 
 namespace SonicEar_Backend.Controllers
 {
@@ -21,7 +20,7 @@ namespace SonicEar_Backend.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Device>> Get([FromQuery] string? sortBy)
         {
-            
+
             IEnumerable<Device> result = _devicesRepository.GetAll(sortBy);
             if (result.Any())
             {
@@ -58,7 +57,7 @@ namespace SonicEar_Backend.Controllers
                 Device createdDevice = _devicesRepository.Create(newDevice);
                 return Created("/" + createdDevice.Id, createdDevice);
             }
-            catch (ArgumentNullException ex)  
+            catch (ArgumentNullException ex)
             {
                 return BadRequest("Indtast venligst en lokation");
             }
@@ -79,13 +78,13 @@ namespace SonicEar_Backend.Controllers
             catch (Exception ex) when (ex is ArgumentNullException || ex is ArgumentOutOfRangeException)
             {
                 return BadRequest("Placering skal være på mindst 1 tegn");
-            } 
+            }
         }
 
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("{id}")]
-        public ActionResult<Device> Delete(int id) 
+        public ActionResult<Device> Delete(int id)
         {
             Device? deletedDevice = _devicesRepository.Delete(id);
             if (deletedDevice == null)

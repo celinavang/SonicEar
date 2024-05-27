@@ -17,13 +17,14 @@
                 </a>
             </div>
                     <!--Søgefelt for enheder-->
-                    <div class="search-div">
-                        <div>
-                            <input v-model="searchQuery" type="text" placeholder="Søg her:" />
-                            <button class="search-button" v-on:click="search">Søg</button>
-                        </div>
-
+                <div class="search-div">
+                    <div style="margin-bottom:10px;">
+                        <input v-model="searchQuery" type="text" placeholder="Søg..." class="search-input" />
+                        <button class="btn-search " v-on:click="search">
+                            <img style="width:20px; " src="/images/search.png" />
+                        </button>
                     </div>
+                </div>
 
                 <table class="full-table shdw">
                         <thead>
@@ -72,9 +73,14 @@
         </div>
 
     <div class="container">
-        <div style="width:150px; margin-left:auto; margin-right:auto; margin-top:30px">
-            <button class="page-btn" v-on:click="setPage(currentPage-1)"><img src="~/images/pagearrow.png" style="width:60px; transform:rotate(180deg);" /></button>
-            <button class="page-btn" v-on:click="setPage(currentPage+1)"><img src="~/images/pagearrow.png" style="width:60px;" /></button>
+        <div style="width:200px; margin-left:auto; margin-right:auto; margin-top:30px; height:60px; padding:auto;">
+            <div style="display:inline; margin-right: auto;margin-left:0px;">
+                <button class="page-btn" v-on:click="setPage(currentPage-1)"><img src="~/images/pagearrow.png" style="width:60px; transform:rotate(180deg);" /></button>
+            </div>
+        
+            <div style="display:inline; margin-left: auto;margin-right:0px;">
+                <button class="page-btn" v-on:click="setPage(currentPage+1)"><img src="~/images/pagearrow.png" style="width:60px;" /></button>
+            </div>
         </div>
     </div>
 </div>
